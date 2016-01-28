@@ -5,6 +5,8 @@
  */
 package ultimatechess;
 
+import byui.cit260.ultimateChess.model.Player;
+
 /**
  *
  * @author Tanman
@@ -15,7 +17,13 @@ public class UltimateChess {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Player playerOne = new Player();
         
+        playerOne.setName("Fred Flinstone");
+        
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
     }
     
 }
