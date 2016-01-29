@@ -11,6 +11,6 @@ import java.io.Serializable;
  *
  * @author Tanman
  */
-public class Question implements Serializable{
+public class Moves implements Serializable{
     
 }

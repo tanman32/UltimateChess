@@ -11,6 +11,12 @@ import java.io.Serializable;
  *
  * @author Tanman
  */
-public class Question implements Serializable{
+public class Gate implements Serializable {
     
+    // class instance variable
+    private String description;
+    private String codeToBreak;
+    private double solution;
+    private int openStatus;
+    private int gateNum;
 }
