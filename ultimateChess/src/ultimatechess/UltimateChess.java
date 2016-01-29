@@ -5,6 +5,7 @@
  */
 package ultimatechess;
 
+import byui.cit260.ultimateChess.model.Game;
 import byui.cit260.ultimateChess.model.Player;
 
 /**
@@ -24,6 +25,17 @@ public class UltimateChess {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        Game gameOne = new Game();
+        
+        gameOne.setGatesUnlocked(7.25);
+        
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
+        
+        
+        
+        
     }
     
 }
