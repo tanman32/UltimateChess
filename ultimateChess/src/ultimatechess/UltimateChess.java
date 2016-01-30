@@ -8,7 +8,12 @@ package ultimatechess;
 import byui.cit260.ultimateChess.model.Actor;
 import byui.cit260.ultimateChess.model.Game;
 import byui.cit260.ultimateChess.model.Inventory;
+import byui.cit260.ultimateChess.model.Journal;
+import byui.cit260.ultimateChess.model.Location;
+import byui.cit260.ultimateChess.model.Map;
 import byui.cit260.ultimateChess.model.Player;
+import byui.cit260.ultimateChess.model.Potions;
+import byui.cit260.ultimateChess.model.PowerUps;
 
 /**
  *
@@ -44,7 +49,40 @@ public class UltimateChess {
         String inventoryInfo = inventoryOne.toString();
         System.out.println(inventoryInfo);
         
+        Journal journalOne = new Journal();
+        journalOne.setUseDescription("ABC");
+        journalOne.setLocationOfclue("ABC");
+        journalOne.setClueDirectory("ABC");
+        String journalInfo = journalOne.toString();
+        System.out.println(journalInfo);
  
+        Location locationOne = new Location();
+        locationOne.setRow(123);
+        locationOne.setColumn(123);
+        locationOne.setSpecialLocation("ABC");
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+        
+        Map mapOne = new Map();
+        mapOne.setRowCount(123);
+        mapOne.setColumnCount(123);
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
+        Potions potionsOne = new Potions();
+        potionsOne.setUseDescription("ABC");
+        potionsOne.setPotionChanges("ABC");
+        String potionsInfo = potionsOne.toString();
+        System.out.println(potionsInfo);
+        
+        PowerUps powerupsOne = new PowerUps();
+        powerupsOne.setUseDescription("ABC");
+        powerupsOne.setPowerUpAddition("ABC");
+        String powerupsInfo = powerupsOne.toString();
+        System.out.println(powerupsInfo);
+        
+        
+        
     }
     
 }
