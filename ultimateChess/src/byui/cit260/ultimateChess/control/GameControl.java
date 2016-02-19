@@ -5,10 +5,16 @@
  */
 package byui.cit260.ultimateChess.control;
 
+import byui.cit260.ultimateChess.model.Player;
+
 /**
  *
  * @author manman
  */
 public class GameControl {
+
+    public static Player createPlayer(String playersName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

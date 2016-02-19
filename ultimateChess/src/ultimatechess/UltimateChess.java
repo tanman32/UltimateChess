@@ -14,6 +14,7 @@ import byui.cit260.ultimateChess.model.Map;
 import byui.cit260.ultimateChess.model.Player;
 import byui.cit260.ultimateChess.model.Potions;
 import byui.cit260.ultimateChess.model.PowerUps;
+import citbyui.cit260.ultimateChess.view.StartProgram;
 
 /**
  *
@@ -81,7 +82,11 @@ public class UltimateChess {
         String powerupsInfo = powerupsOne.toString();
         System.out.println(powerupsInfo);
         
-        
+        //create StartProgramViewOrig and display the start program view
+        StartProgram startProgram = new StartProgram();
+         startProgram.displayBanner();
+         startProgram.displayStartProgramView();
+         
         
     }
     
