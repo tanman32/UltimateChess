@@ -6,15 +6,28 @@
 package byui.cit260.ultimateChess.control;
 
 import byui.cit260.ultimateChess.model.Player;
+import ultimatechess.UltimateChess;
+
 
 /**
  *
- * @author manman
+ * @author Tanman
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Player createPlayer(String name) {
+       
+        
+        if (name == null){
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        UltimateChess.setPlayer(player);
+        
+        return player;
     }
     
 }
