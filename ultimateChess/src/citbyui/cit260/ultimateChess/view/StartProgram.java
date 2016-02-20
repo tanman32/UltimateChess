@@ -21,20 +21,20 @@ public class StartProgram {
     }
 
     public void startProgram() {
-        this.promptMessage = "/nPlease enter your name: ";
+        this.promptMessage = "Please enter your name: ";
         
         this.displayBanner();
      
     }  
      public void displayBanner(){
-        System.out.println("The game Ultimate Chess is going to be an adventure\n "
+        System.out.println("    The game Ultimate Chess is going to be an adventure\n "
                          + "game. An evil overlord has taken your true love, your\n"
                          + "queen from you, because you refused to play silly games\n"
                          + "with him. Now you’re going to have to play his “Game”,\n"
                          + "or unbeknownst to you series of games, to rescue your\n"
                          + "gal back.\n"
                          + "\n"
-                         + "In this game you will have to rescue the Queen by"
+                         + "    In this game you will have to rescue the Queen by\n"
                          + "moving around the board and overcoming a series of\n"
                          + "obstacles to reach her. You will need to collect clues\n"
                          + "from Challenges, Riddles, and Maze scenes to unlock\n"
@@ -76,7 +76,7 @@ public class StartProgram {
          return value;
              
         //System.out.println("\\n*** getPlayersName() called ***");
-         //return "Joe";
+        // return "Joe";
     }
 
     private boolean doAction(String playersName) {
@@ -93,6 +93,13 @@ public class StartProgram {
             return false;
         }
         System.out.println(playersName);
+        
+        // display next view
+        this.displayNextView();
         return true;
         }
+
+    private void displayNextView() {
+        System.out.println("\\n*** displayNextView() called ***");
+    }
 }
