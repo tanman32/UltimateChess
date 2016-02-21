@@ -9,6 +9,11 @@ package citbyui.cit260.ultimateChess.view;
  *
  * @author Tanman
  */
-public class MainMenu {
-    
+class GameMenuView {
+
+    void displayMenu() {
+        System.out.println("\n*** displayMenu stub function called ***");
+    }
 }
+    
+

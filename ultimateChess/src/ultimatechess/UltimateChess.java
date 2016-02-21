@@ -25,6 +25,10 @@ public class UltimateChess {
     /**
      * @param args the command line arguments
      */
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     public static void main(String[] args) {
         Player playerOne = new Player();
         playerOne.setName("Fred Flinstone");
@@ -80,14 +84,30 @@ public class UltimateChess {
         powerupsOne.setUseDescription("ABC");
         powerupsOne.setPowerUpAddition("ABC");
         String powerupsInfo = powerupsOne.toString();
-        System.out.println(powerupsInfo);
+        System.out.println(powerupsInfo + "\n");
         
         //create StartProgramViewOrig and display the start program view
         StartProgram startProgram = new StartProgram();
-         startProgram.displayBanner();
+         startProgram.startProgram();
          startProgram.displayStartProgramView();
-         
+     
         
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        UltimateChess.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        UltimateChess.player = player;
     }
     
 }
