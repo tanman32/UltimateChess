@@ -75,7 +75,7 @@ public class StartProgram {
          
          return value;
              
-        //System.out.println("\\n*** getPlayersName() called ***");
+       // System.out.println("\\n*** getPlayersName() called ***");
         // return "Joe";
     }
 
@@ -92,14 +92,24 @@ public class StartProgram {
             System.out.println("\nError creating the player.");
             return false;
         }
-        System.out.println(playersName);
+        //System.out.println(playersName);
         
         // display next view
-        this.displayNextView();
+        this.displayNextView(playersName);
         return true;
         }
 
-    private void displayNextView() {
-        System.out.println("\\n*** displayNextView() called ***");
-    }
+    //I am not sure if I did this corretly
+    private void displayNextView(String player) {
+        System.out.println("\n===================================="
+                          + "\n Welcome to the game " + player 
+                          + "\n We hope you have a lot of fun!"
+                          + "\n=================================="); 
+        
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        // Display the main menu view
+        mainMenuView.displayMainMenuView();  }
+    
+   
 }
