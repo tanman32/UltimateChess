@@ -43,28 +43,11 @@ public class MainMenuView {
     }
 
     private String getMenuOption() {
-         Scanner keyboard = new Scanner(System.in);
-         String value = "";
-         boolean valid = false;
+         System.out.println("\n*** getMenuOption() function called ***");
          
-         while(!valid){
-             System.out.println("\n" + this.promptMessage);
-             
-             value = keyboard.nextLine();
-             value = value.trim();
-             
-             if (value.length() < 1) {
-                 System.out.println("\nInvalid value: value can not be blank");
-                 continue;
-             }
-             break;
+         return "N";
          }
-         
-         return value;
-             
-       // System.out.println("\\n*** getPlayersName() called ***");
-        // return "Joe";
-    }
+                      
     private boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); 
@@ -85,18 +68,14 @@ public class MainMenuView {
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-                
-            
         }
         
-        System.out.println("\n*** doAction() function called ***");
-        return true;
+        return false;
+      
     }
 
     private void startNewGame() {
-        System.out.println("\n*** startNewGame function called ***");
-        
-        //Creates a new game
+            //Creates a new game
         GameControl.createNewGame(UltimateChess.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
