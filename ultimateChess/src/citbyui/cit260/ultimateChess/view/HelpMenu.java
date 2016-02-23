@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.ultimateChess.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Tanman
@@ -37,10 +39,26 @@ public class HelpMenu {
     }
     
     private String getMenuOption() {
-        System.out.println("\n*** getMenuOption() function called ***");
+        Scanner keyboard = new Scanner(System.in);
+         String value = "";
+         boolean valid = false;
          
-         return "N";
-    } 
+         while(!valid){
+             System.out.println("\n" + this.menu);
+             
+             value = keyboard.nextLine();
+             value = value.trim();
+             
+             if (value.length() < 1) {
+                 System.out.println("\nInvalid value: value can not be blank");
+                 continue;
+             }
+             break;
+         }
+         
+         return value;
+         }
+     
         private boolean doAction(String choice) {
             choice = choice.toUpperCase();
         
@@ -56,13 +74,10 @@ public class HelpMenu {
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                break;
-                
-            
+                break; 
         }
         
-        System.out.println("\n*** doAction() function called ***");
-        return true;
+        return false;
     }
 
     private void goalOfGame() {
@@ -75,6 +90,10 @@ public class HelpMenu {
 
     private void skill() {
         System.out.println("\n*** skill function called ***");
+    }
+    
+    void displayMenu() {
+        System.out.println("\n*** displayMenu function called ***");
     }
 
 }

@@ -32,20 +32,35 @@ public class MainMenuView {
    
     public void displayMainMenuView() {
         boolean done = false;
-        do {
+        while(!done){
             // prompt for and get players
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
             //do the requested action and display the next view
             done = this.doAction(menuOption);
-        } while (!done);
+        }
     }
 
     private String getMenuOption() {
-         System.out.println("\n*** getMenuOption() function called ***");
+         Scanner keyboard = new Scanner(System.in);
+         String value = "";
+         boolean valid = false;
          
-         return "N";
+         while(!valid){
+             System.out.println("\n" + this.menu);
+             
+             value = keyboard.nextLine();
+             value = value.trim();
+             
+             if (value.length() < 1) {
+                 System.out.println("\nInvalid value: value can not be blank");
+                 continue;
+             }
+             break;
+         }
+         
+         return value;
          }
                       
     private boolean doAction(String choice) {
@@ -92,5 +107,9 @@ public class MainMenuView {
 
     private void saveGame() {
       System.out.println("\n*** saveGame function called ***");
+    }
+    
+    void displayMenu() {
+        System.out.println("\n*** displayMenu function called ***");
     }
 }

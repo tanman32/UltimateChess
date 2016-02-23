@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.ultimateChess.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Tanman
@@ -30,21 +32,37 @@ public class GameMenuView {
      }
     public void displayGameMenuView() {
         boolean done = false;
-        do {
+        do{
             // prompt for and get players
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
+            if (menuOption.toUpperCase().equals("Q")){
+                done = this.doAction(menuOption);
+            }
+            //do the requested action and display the next view    
         } while (!done);
     }
     
     private String getMenuOption() {
-        System.out.println("\n*** getMenuOption() function called ***");
+        Scanner keyboard = new Scanner(System.in);
+         String value = "";
+         boolean valid = false;
          
-         return "N";
-    } 
+         while(!valid){
+             System.out.println("\n" + this.menu);
+             
+             value = keyboard.nextLine();
+             value = value.trim();
+             
+             if (value.length() < 1) {
+                 System.out.println("\nInvalid value: value can not be blank");
+                 continue;
+             }
+             break;
+         }
+         
+         return value;
+         }
+     
         private boolean doAction(String choice) {
             choice = choice.toUpperCase();
         
@@ -75,8 +93,8 @@ public class GameMenuView {
                 break;        
         }
         
-        System.out.println("\n*** doAction() function called ***");
-        return true;
+        
+        return false;
     }
 
     private void viewMap() {
@@ -108,8 +126,10 @@ public class GameMenuView {
     }
 
     void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       System.out.println("\n*** displayMenu function called ***");
     }
+
+    
     
 }
     
