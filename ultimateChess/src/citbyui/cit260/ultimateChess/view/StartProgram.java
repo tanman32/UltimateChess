@@ -44,7 +44,7 @@ public class StartProgram {
      }
 
     public void displayStartProgramView() {
-        System.out.println("\n*** displayProgramView function called ***");
+       
         boolean done = false;
         do {
             String playersName = this.getPlayersName();

@@ -51,6 +51,7 @@ public class MainMenuView {
              System.out.println("\n" + this.menu);
              
              value = keyboard.nextLine();
+            //find what trim
              value = value.trim();
              
              if (value.length() < 1) {
@@ -102,7 +103,11 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-     System.out.println("\n*** displayHelpMenu function called ***");
+        //create help menu view object
+        HelpMenuView helpMenu = new HelpMenuView();
+       
+        //display help menu view object
+        helpMenu.displayHelpMenuView();
     }
 
     private void saveGame() {
