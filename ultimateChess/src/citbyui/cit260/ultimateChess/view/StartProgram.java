@@ -75,8 +75,7 @@ public class StartProgram {
          
          return value;
              
-       // System.out.println("\\n*** getPlayersName() called ***");
-        // return "Joe";
+       
     }
 
     private boolean doAction(String playersName) {

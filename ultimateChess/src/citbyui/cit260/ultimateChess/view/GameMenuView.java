@@ -31,14 +31,14 @@ public class GameMenuView {
     
      }
     public void displayGameMenuView() {
-        boolean done = false;
-        do{
+       boolean done = false;
+        do {
             // prompt for and get players
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")){
-                done = this.doAction(menuOption);
-            }
-            //do the requested action and display the next view    
+            if (menuOption.toUpperCase().equals("Q"))
+                return;
+            //do the requested action and display the next view
+            done = this.doAction(menuOption);
         } while (!done);
     }
     
@@ -96,7 +96,7 @@ public class GameMenuView {
         
         return false;
     }
-
+     
     private void viewMap() {
         System.out.println("\n*** viewMap function called ***");    
     }
@@ -125,11 +125,7 @@ public class GameMenuView {
         System.out.println("\n*** help function called ***");
     }
 
-    void displayMenu() {
-       System.out.println("\n*** displayMenu function called ***");
-    }
-
-    
+   
     
 }
     
