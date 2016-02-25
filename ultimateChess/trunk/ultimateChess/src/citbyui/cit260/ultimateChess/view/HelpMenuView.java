@@ -67,7 +67,7 @@ public class HelpMenuView {
                 this.goalOfGame();
                 break;
             case "M":
-                this.displayHowToMove();
+                this.howToMove();
                 break;
             case "S":
                 this.skill();
@@ -85,19 +85,12 @@ public class HelpMenuView {
                 + "obstacles and traversing the castle.");
     }
 
-   // private void howToMove() {
-      //  System.out.println("\nWe will have a coordinate system that "
-        //        + "the user can access to move accross the "
-         //       + "gameboard.");
-  //  }
-
-      private void displayHowToMove() {
-        //create move menu view object
-        HowToMoveView chessMove = new HowToMoveView();
-       
-        //display move menu view object
-        chessMove.displayHowToMoveView();
+    private void howToMove() {
+        System.out.println("\nWe will have a coordinate system that "
+                + "the user can access to move accross the "
+                + "gameboard.");
     }
+
     private void skill() {
         System.out.println("\nAnything for now and exactly that.");
     }

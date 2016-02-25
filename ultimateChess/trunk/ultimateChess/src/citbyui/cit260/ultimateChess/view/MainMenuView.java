@@ -5,41 +5,45 @@
  */
 package citbyui.cit260.ultimateChess.view;
 
+import byui.cit260.ultimateChess.control.GameControl;
+
 import java.util.Scanner;
+import ultimatechess.UltimateChess;
 
 /**
  *
  * @author Tanman
  */
-public class HelpMenuView {
+public class MainMenuView {
     private String menu;
     private String promptMessage;
-    public HelpMenuView()
-     {
+    public MainMenuView()
+    {
          this.menu = "\n"
               + "\n---------------------------"
-              + "\n| Help Menu               |"
-              + "\nG - What is the goal of the Game"
-              + "\nM - How to move"
-              + "\nS - Skills "
+              + "\n| Main Menu               |"
+              + "\nN - Start new game"
+              + "\nG - Get and start saved game"
+              + "\nH - Get help on how to play the game"
+              + "\nS - Save game"
               + "\nQ - Quit"
               + "\n---------------------------";
-    
-     }
-    public void displayHelpMenuView() {
+    }
+   
+    public void displayMainMenuView() {
         boolean done = false;
-        do {
+        while(!done){
             // prompt for and get players
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
             //do the requested action and display the next view
             done = this.doAction(menuOption);
-        } while (!done);
+        }
     }
-    
+
     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
+         Scanner keyboard = new Scanner(System.in);
          String value = "";
          boolean valid = false;
          
@@ -47,6 +51,7 @@ public class HelpMenuView {
              System.out.println("\n" + this.menu);
              
              value = keyboard.nextLine();
+            //find what trim
              value = value.trim();
              
              if (value.length() < 1) {
@@ -58,50 +63,58 @@ public class HelpMenuView {
          
          return value;
          }
-     
-        private boolean doAction(String choice) {
-            choice = choice.toUpperCase();
+                      
+    private boolean doAction(String choice) {
+        
+        choice = choice.toUpperCase(); 
         
         switch (choice){
-            case "G":
-                this.goalOfGame();
+            case "N":
+                this.startNewGame();
                 break;
-            case "M":
-                this.displayHowToMove();
+            case "G":
+                this.startExistingGame();
+                break;
+            case "H":
+                this.displayHelpMenu();
                 break;
             case "S":
-                this.skill();
+                this.saveGame();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                break; 
+                break;
         }
         
         return false;
+      
     }
 
-    private void goalOfGame() {
-        System.out.println("\nTo rescue the queen by completing a series of "
-                + "obstacles and traversing the castle.");
+    private void startNewGame() {
+            //Creates a new game
+        GameControl.createNewGame(UltimateChess.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenuView();
     }
 
-   // private void howToMove() {
-      //  System.out.println("\nWe will have a coordinate system that "
-        //        + "the user can access to move accross the "
-         //       + "gameboard.");
-  //  }
+    private void startExistingGame() {
+     System.out.println("\n*** startExistingGame function called ***");
+    }
 
-      private void displayHowToMove() {
-        //create move menu view object
-        HowToMoveView chessMove = new HowToMoveView();
+    private void displayHelpMenu() {
+        //create help menu view object
+        HelpMenuView helpMenu = new HelpMenuView();
        
-        //display move menu view object
-        chessMove.displayHowToMoveView();
+        //display help menu view object
+        helpMenu.displayHelpMenuView();
     }
-    private void skill() {
-        System.out.println("\nAnything for now and exactly that.");
+
+    private void saveGame() {
+      System.out.println("\n*** saveGame function called ***");
     }
     
-   
-
+    void displayMenu() {
+        System.out.println("\n*** displayMenu function called ***");
+    }
 }

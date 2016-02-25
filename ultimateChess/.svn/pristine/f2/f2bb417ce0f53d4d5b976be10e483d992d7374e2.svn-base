@@ -27,7 +27,7 @@ public class GateControl {
 
     }
 
-    public static double gateToOpen(double resistance, double current) {
+    public double gateToOpen(double resistance, double current) {
 
         if (resistance < 1 || resistance > 1000) {
             return -3;

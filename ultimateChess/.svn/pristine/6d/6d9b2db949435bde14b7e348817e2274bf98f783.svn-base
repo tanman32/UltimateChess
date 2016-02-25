@@ -14,9 +14,7 @@ import byui.cit260.ultimateChess.model.Map;
 import byui.cit260.ultimateChess.model.Player;
 import byui.cit260.ultimateChess.model.Potions;
 import byui.cit260.ultimateChess.model.PowerUps;
-import citbyui.cit260.ultimateChess.view.GateControlOneView;
 import citbyui.cit260.ultimateChess.view.StartProgram;
-
 
 /**
  *
@@ -38,11 +36,6 @@ public class UltimateChess {
          startProgram.startProgram();
          startProgram.displayStartProgramView();
      
-         //create StartProgramViewOrig and display the start program view
-        GateControlOneView enterGate = new GateControlOneView();
-         enterGate.gateControlOneView();
-         enterGate.displayGateControlOneView();
-        
         
     }
 
