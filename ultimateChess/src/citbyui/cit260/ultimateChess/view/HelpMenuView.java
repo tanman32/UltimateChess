@@ -11,55 +11,23 @@ import java.util.Scanner;
  *
  * @author Tanman
  */
-public class HelpMenuView {
-    private String menu;
-    private String promptMessage;
+public class HelpMenuView extends View{
+    
     public HelpMenuView()
      {
-         this.menu = "\n"
+         super("\n"
               + "\n---------------------------"
               + "\n| Help Menu               |"
               + "\nG - What is the goal of the Game"
               + "\nM - How to move"
               + "\nS - Skills "
               + "\nQ - Quit"
-              + "\n---------------------------";
+              + "\n---------------------------");
     
      }
-    public void displayHelpMenuView() {
-        boolean done = false;
-        do {
-            // prompt for and get players
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-         String value = "";
-         boolean valid = false;
-         
-         while(!valid){
-             System.out.println("\n" + this.menu);
-             
-             value = keyboard.nextLine();
-             value = value.trim();
-             
-             if (value.length() < 1) {
-                 System.out.println("\nInvalid value: value can not be blank");
-                 continue;
-             }
-             break;
-         }
-         
-         return value;
-         }
-     
-        private boolean doAction(String choice) {
+   
+    @Override
+        public boolean doAction(String choice) {
             choice = choice.toUpperCase();
         
         switch (choice){
@@ -85,18 +53,12 @@ public class HelpMenuView {
                 + "obstacles and traversing the castle.");
     }
 
-   // private void howToMove() {
-      //  System.out.println("\nWe will have a coordinate system that "
-        //        + "the user can access to move accross the "
-         //       + "gameboard.");
-  //  }
-
       private void displayHowToMove() {
         //create move menu view object
         HowToMoveView chessMove = new HowToMoveView();
        
         //display move menu view object
-        chessMove.displayHowToMoveView();
+        chessMove.display();
     }
     private void skill() {
         System.out.println("\nAnything for now and exactly that.");

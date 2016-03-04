@@ -7,27 +7,15 @@ package citbyui.cit260.ultimateChess.view;
 
 import byui.cit260.ultimateChess.control.GameControl;
 import byui.cit260.ultimateChess.model.Player;
-import java.util.Scanner;
 
 /**
  *
  * @author Tanman
  */
-public class StartProgram {
-    private String promptMessage;
-    
+public class StartProgram extends View {
+ 
     public StartProgram() {
-       
-    }
-
-    public void startProgram() {
-        this.promptMessage = "Please enter your name: ";
-        
-        this.displayBanner();
-     
-    }  
-     public void displayBanner(){
-        System.out.println("    The game Ultimate Chess is going to be an adventure\n "
+        super("    The game Ultimate Chess is going to be an adventure\n "
                          + "game. An evil overlord has taken your true love, your\n"
                          + "queen from you, because you refused to play silly games\n"
                          + "with him. Now you’re going to have to play his “Game”,\n"
@@ -40,45 +28,14 @@ public class StartProgram {
                          + "from Challenges, Riddles, and Maze scenes to unlock\n"
                          + "gates to move to the next section of the game. You also\n"
                          + "can collect power-ups and potions that will be useful in\n"
-                         + "Challenge scenes.\n");
-     }
-
-    public void displayStartProgramView() {
-       
-        boolean done = false;
-        do {
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(playersName);
-        } while (!done);
+                         + "Challenge scenes.\n"
+                         + "\nWhat is your name? ");
     }
-
-    private String getPlayersName() {
-         Scanner keyboard = new Scanner(System.in);
-         String value = "";
-         boolean valid = false;
-         
-         while(!valid){
-             System.out.println("\n" + this.promptMessage);
-             
-             value = keyboard.nextLine();
-             value = value.trim();
-             
-             if (value.length() < 1) {
-                 System.out.println("\nInvalid value: value can not be blank");
-                 continue;
-             }
-             break;
-         }
-         
-         return value;
-             
+        
+ 
+    @Override
+    public boolean doAction(String playersName) {
        
-    }
-
-    private boolean doAction(String playersName) {
         if (playersName.length() < 2){
             System.out.println("\nInvalid players name: "
             + "The name must be greater than one character in length");
@@ -108,7 +65,7 @@ public class StartProgram {
         MainMenuView mainMenuView = new MainMenuView();
         
         // Display the main menu view
-        mainMenuView.displayMainMenuView();  }
+        mainMenuView.display();  }
     
    
 }

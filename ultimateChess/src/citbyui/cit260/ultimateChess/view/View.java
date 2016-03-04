@@ -29,11 +29,14 @@ public abstract class View implements ViewInterface {
             //prompts for and gets players name
             String value = this.getInput();
             
+            //Recently modified
+            //You need to be able to exit the program and finish
+              if (value.toUpperCase().equals("Q"))
+                  return;
             //do  the requested action and display the next view
             done = this.doAction(value);
         } while (!done);
     }
-    
     
     @Override
     public String getInput() {
@@ -53,9 +56,12 @@ public abstract class View implements ViewInterface {
              value = value.trim();
              
              if (value.length() < 1) { // blank value entered
-                 System.out.println("\n");
+                 System.out.println("\n*** You must enter a value ***");
                  continue;
              }
              break;
          }
+         
+         return value; //returns the name
+    }
 }

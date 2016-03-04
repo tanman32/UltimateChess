@@ -30,7 +30,7 @@ public class StartProgramTest {
     public void testDisplayBanner() {
         System.out.println("displayBanner");
         StartProgram instance = new StartProgram();
-        instance.displayBanner();
+        //instance.displayBanner();
    
     }
 
@@ -41,7 +41,7 @@ public class StartProgramTest {
     public void testStartProgram() {
         System.out.println("startProgram");
         StartProgram instance = new StartProgram();
-        instance.startProgram();
+        //instance.startProgram();
        
     }
     

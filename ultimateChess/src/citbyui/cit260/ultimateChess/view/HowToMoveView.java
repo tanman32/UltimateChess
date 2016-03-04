@@ -5,64 +5,30 @@
  */
 package citbyui.cit260.ultimateChess.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Tanman
  */
-public class HowToMoveView {
-    private String menu;
-    private String promptMessage; 
+public class HowToMoveView extends View{
+    
     public HowToMoveView()
      {
-         this.menu = "\n"
+         super("\n"
               + "\n---------------------------"
               + "\n| Chess Move Menu         |"
               + "\nP -Pawn"
               + "\nR - Rooke"
               + "\nN - Knight"
               + "\nB - Bishop"
-              + "\nQ - Queen"
+              + "\nZ - Queen"
               + "\nK - King"
-              + "\nX - Quit"
-              + "\n---------------------------";
+              + "\nQ - Quit"
+              + "\n---------------------------");
     
      }
-    public void displayHowToMoveView() {
-        boolean done = false;
-        do {
-            // prompt for and get players
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("X"))
-                return;
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-         String value = "";
-         boolean valid = false;
-         
-         while(!valid){
-             System.out.println("\n" + this.menu);
-             
-             value = keyboard.nextLine();
-             value = value.trim();
-             
-             if (value.length() < 1) {
-                 System.out.println("\nInvalid value: value can not be blank");
-                 continue;
-             }
-             break;
-         }
-         
-         return value;
-         }
-     
-        private boolean doAction(String choice) {
+   
+    @Override
+        public boolean doAction(String choice) {
             choice = choice.toUpperCase();
         
         switch (choice){
@@ -78,7 +44,7 @@ public class HowToMoveView {
             case "B":
                 this.bishop();
                 break;
-           case "Q":
+           case "Z":
                 this.queen();
                 break;
             case "K":

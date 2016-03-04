@@ -47,16 +47,16 @@ public class codeToBreakView {
          
     private double getAnswer() {
         Scanner keyboard = new Scanner(System.in);
-         String value = "";
+         Double value = -1.0;
          boolean valid = false;
          
          while(!valid){
              System.out.println("\n" + this.promptMessage);
              
-             value = keyboard.nextLine();
-             value = value.trim();
+             value = keyboard.nextDouble();
+             //value = value.trim();
              
-             if (value.length() < 1) {
+             if (value < 1) {
                  System.out.println("\nInvalid value: value can not be blank");
                  continue;
              }
@@ -68,7 +68,8 @@ public class codeToBreakView {
     }
 
     private boolean doAction(double answer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+        return false;
     }
 
     }

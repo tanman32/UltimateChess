@@ -5,18 +5,15 @@
  */
 package citbyui.cit260.ultimateChess.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Tanman
  */
-public class GameMenuView {
-    private String menu;
-    private String promptMessage;
+public class GameMenuView extends View{
+    
     public GameMenuView()
     {
-        this.menu = "\n"
+        super("\n"
               + "\n---------------------------"
               + "\n| Game Menu               |"
               + "\nV - View map"
@@ -27,43 +24,12 @@ public class GameMenuView {
               + "\nE - Estimate the resource needed"  
               + "\nH - Help"  
               + "\nQ - Quit"
-              + "\n---------------------------";
+              + "\n---------------------------");
     
      }
-    public void displayGameMenuView() {
-       boolean done = false;
-        do {
-            // prompt for and get players
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-         String value = "";
-         boolean valid = false;
-         
-         while(!valid){
-             System.out.println("\n" + this.menu);
-             
-             value = keyboard.nextLine();
-             value = value.trim();
-             
-             if (value.length() < 1) {
-                 System.out.println("\nInvalid value: value can not be blank");
-                 continue;
-             }
-             break;
-         }
-         
-         return value;
-         }
      
-        private boolean doAction(String choice) {
+    @Override
+        public boolean doAction(String choice) {
             choice = choice.toUpperCase();
         
         switch (choice){

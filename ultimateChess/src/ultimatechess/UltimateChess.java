@@ -35,13 +35,14 @@ public class UltimateChess {
         
         //create StartProgramViewOrig and display the start program view
         StartProgram startProgram = new StartProgram();
-         startProgram.startProgram();
-         startProgram.displayStartProgramView();
+        startProgram.display();
+        
      
          //create StartProgramViewOrig and display the start program view
-        GateControlOneView enterGate = new GateControlOneView();
-         enterGate.gateControlOneView();
-         enterGate.displayGateControlOneView();
+         // Just taking a break for now
+       // GateControlOneView enterGate = new GateControlOneView();
+        // enterGate.gateControlOneView();
+        // enterGate.displayGateControlOneView();
         
         
     }
