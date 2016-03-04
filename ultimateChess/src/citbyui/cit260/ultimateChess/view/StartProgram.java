@@ -55,7 +55,6 @@ public class StartProgram extends View {
         return true;
         }
 
-    //I am not sure if I did this corretly
     private void displayNextView(String player) {
         System.out.println("\n===================================="
                           + "\n Welcome to the game " + player 
