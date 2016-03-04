@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.ultimateChess.view;
 
+import byui.cit260.ultimateChess.view.StartProgram;
 import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;

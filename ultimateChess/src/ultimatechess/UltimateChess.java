@@ -14,8 +14,8 @@ import byui.cit260.ultimateChess.model.Map;
 import byui.cit260.ultimateChess.model.Player;
 import byui.cit260.ultimateChess.model.Potions;
 import byui.cit260.ultimateChess.model.PowerUps;
-import citbyui.cit260.ultimateChess.view.GateControlOneView;
-import citbyui.cit260.ultimateChess.view.StartProgram;
+import byui.cit260.ultimateChess.view.GateControlOneView;
+import byui.cit260.ultimateChess.view.StartProgram;
 
 
 /**

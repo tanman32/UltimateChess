@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.ultimateChess.view;
+package byui.cit260.ultimateChess.view;
 
 import byui.cit260.ultimateChess.control.GameControl;
 
@@ -14,12 +14,12 @@ import ultimatechess.UltimateChess;
  *
  * @author Tanman
  */
-public class MainMenuView {
+public class MainMenuView extends View{
     private String menu;
     private String promptMessage;
     public MainMenuView()
     {
-         this.menu = "\n"
+         super("\n"
               + "\n---------------------------"
               + "\n| Main Menu               |"
               + "\nN - Start new game"
@@ -27,48 +27,17 @@ public class MainMenuView {
               + "\nH - Get help on how to play the game"
               + "\nS - Save game"
               + "\nQ - Quit"
-              + "\n---------------------------";
+              + "\n---------------------------");
+        
     }
-   
-    public void displayMainMenuView() {
-        boolean done = false;
-        while(!done){
-            // prompt for and get players
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-        }
-    }
-
-    private String getMenuOption() {
-         Scanner keyboard = new Scanner(System.in);
-         String value = "";
-         boolean valid = false;
-         
-         while(!valid){
-             System.out.println("\n" + this.menu);
-             
-             value = keyboard.nextLine();
-            //find what trim
-             value = value.trim();
-             
-             if (value.length() < 1) {
-                 System.out.println("\nInvalid value: value can not be blank");
-                 continue;
-             }
-             break;
-         }
-         
-         return value;
-         }
                       
-    private boolean doAction(String choice) {
+    @Override
+    //choice might have made more sense than value as the variable name
+    public boolean doAction(String value) {
         
-        choice = choice.toUpperCase(); 
+        value = value.toUpperCase(); 
         
-        switch (choice){
+        switch (value){
             case "N":
                 this.startNewGame();
                 break;
@@ -95,7 +64,7 @@ public class MainMenuView {
         GameControl.createNewGame(UltimateChess.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -107,7 +76,7 @@ public class MainMenuView {
         HelpMenuView helpMenu = new HelpMenuView();
        
         //display help menu view object
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void saveGame() {

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.ultimateChess.view;
+package byui.cit260.ultimateChess.view;
 
 import byui.cit260.ultimateChess.control.GameControl;
 import byui.cit260.ultimateChess.model.Player;
