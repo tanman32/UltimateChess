@@ -22,6 +22,8 @@ public class GameMenuView extends View{
               + "\nL - View contents of location"
               + "\nM - Move person to new location"  
               + "\nE - Estimate the resource needed"  
+              + "\nT - Open Gate" 
+              + "\nD - Open Gate 2"
               + "\nH - Help"  
               + "\nQ - Quit"
               + "\n---------------------------");
@@ -53,7 +55,13 @@ public class GameMenuView extends View{
                 break;
             case "H":
                 this.help();
-                break;                    
+                break;  
+             case "T":
+                this.openGate();
+                break;
+             case "D":
+                this.openGate2();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;        
@@ -89,6 +97,18 @@ public class GameMenuView extends View{
 
     private void help() {
         System.out.println("\n*** help function called ***");
+    }
+
+    private void openGate() {
+       GateControlOneView gateToOpenView = new GateControlOneView();
+       gateToOpenView.display();
+               
+    }
+    
+    private void openGate2() {
+       codeToBreakView codeToBreakViewOpen = new codeToBreakView();
+       codeToBreakViewOpen.display();
+               
     }
 
    

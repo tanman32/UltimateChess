@@ -5,71 +5,57 @@
  */
 package citbyui.cit260.ultimateChess.view;
 
+import byui.cit260.ultimateChess.control.GateControl;
 import java.util.Scanner;
 
 /**
  *
  * @author taylor
  */
-public class codeToBreakView {
-        private String promptMessage;
+public class codeToBreakView extends View{
         
         public codeToBreakView() {
        
-    }
-
-    public void codeToBreakView() {
-        this.promptMessage = "Please enter the height of triangle: ";
-        this.promptMessage = "Please enter the base of triangle: ";
-
-        this.displayBanner();
-}
-
-    private void displayBanner() {
-        System.out.println("    You will get your formula from the maze, if you\n"
+            super("    You will get your formula from the maze, if you\n"
                          + "complete the mission at the maze. If not you need to\n"
                          + "try again till you success.\n" 
                          + " You need to complete the challenge and get the height\n "
                          + "of triangle from the challenge. If not you need to try\n "
                          + "again till you success.\n" 
                          + "You will get the base of triangle from riddle, if you\n "
-                         + "answer correct. If not you need to try again till you success.\n");
-     }
-    public void displaycodeToBreakView() {
-       
-        boolean done = false;
-        do {
-            double answer = this.getAnswer();
-                     
-            done = this.doAction(answer);
-        } while (!done);
-    }
-         
-    private double getAnswer() {
-        Scanner keyboard = new Scanner(System.in);
-         Double value = -1.0;
-         boolean valid = false;
-         
-         while(!valid){
-             System.out.println("\n" + this.promptMessage);
-             
-             value = keyboard.nextDouble();
-             //value = value.trim();
-             
-             if (value < 1) {
-                 System.out.println("\nInvalid value: value can not be blank");
-                 continue;
-             }
-             break;
-         }
-         
-         return value;
-             
+                         + "answer correct. If not you need to try again till you success.\n"
+                         + "\nPlease enter the height of triangle: ");
     }
 
-    private boolean doAction(double answer) {
+    @Override
+    public boolean doAction(String value) {
        
-        return false;
+        double height = Double.parseDouble(value);
+        
+        System.out.println("Please enter the base of triangle: ");
+        
+        String value2 = this.getInput();
+        double base = Double.parseDouble(value2);
+        
+        double area = GateControl.calCodeToBreak(height, base);
+        
+        if (area != 200){
+            System.out.println("\nBetter Luck next time. This isn't the"
+                    + "\n right voltage to open the gate.");
+            return false;
+        }
+
+        // display next view
+        this.displayNextView(area);
+        return true;
+    }
+
+    private void displayNextView(Double area) {
+        System.out.println("\n===================================="
+                + "\n Awesome! " + area
+                + "\n is in fact the right area to"
+                + "\n open the gate"
+                + "\n==================================");
     }
 
     }
