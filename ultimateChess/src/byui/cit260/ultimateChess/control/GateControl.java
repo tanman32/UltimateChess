@@ -11,7 +11,7 @@ package byui.cit260.ultimateChess.control;
  */
 public class GateControl {
 
-    public double calCodeToBreak(double height, double base) {
+    public static double calCodeToBreak(double height, double base) {
 
         if (height < 1 || height > 10000) {
             return -1;
