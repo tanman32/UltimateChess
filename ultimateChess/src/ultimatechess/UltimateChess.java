@@ -15,6 +15,7 @@ import byui.cit260.ultimateChess.model.Player;
 import byui.cit260.ultimateChess.model.Potions;
 import byui.cit260.ultimateChess.model.PowerUps;
 import byui.cit260.ultimateChess.view.GateControlOneView;
+import byui.cit260.ultimateChess.view.InventoryView;
 import byui.cit260.ultimateChess.view.StartProgram;
 
 
@@ -36,6 +37,10 @@ public class UltimateChess {
         //create StartProgramViewOrig and display the start program view
         StartProgram startProgram = new StartProgram();
         startProgram.display();
+        
+        //create StartProgramViewOrig and display the start program view
+        InventoryView checkStatus = new InventoryView();
+        checkStatus.display();
         
         
     }
