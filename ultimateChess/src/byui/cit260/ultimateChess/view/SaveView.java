@@ -19,18 +19,38 @@ public class SaveView extends View {
     {
         super("\n"
               + "\n---------------------------"
-              + "\n| Your Game Saved |"          
+              + "\n| Do your want to save your game?|"
+              + "\n| Please Enter y or n | "          
               + "\n---------------------------");       
     }
 
-    /**
-     *
-     * @param Value
-     * @return
-     */
     @Override
-    public boolean doAction(String Value) {
+        public boolean doAction(String choice) {
+            choice = choice.toUpperCase();
         
+        switch (choice){
+            case "y":
+                this.yes();
+                break;
+            case "n":
+                this.no();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;        
+        }
+        return false;
+         }
+    private void yes() {
+        System.out.println("\n*** Your Game Saved ***");
     }
-     
-}
+    
+
+    private void no() {
+        //create help menu view object
+        MainMenuView mainmenu = new MainMenuView();
+       
+        //display help menu view object
+        mainmenu.display();
+    }
+    }

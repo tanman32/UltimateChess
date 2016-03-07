@@ -81,7 +81,7 @@ public class MainMenuView extends View{
 
     private void saveGame() {
      //create help menu view object
-        SaveView save = new SaveView() {};
+        SaveView save = new SaveView();
        
         //display help menu view object
         save.display();
