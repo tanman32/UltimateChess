@@ -80,7 +80,11 @@ public class MainMenuView extends View{
     }
 
     private void saveGame() {
-      System.out.println("\n*** saveGame function called ***");
+     //create help menu view object
+        SaveView save = new SaveView() {};
+       
+        //display help menu view object
+        save.display();
     }
     
     void displayMenu() {
