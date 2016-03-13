@@ -15,6 +15,11 @@ public class Game implements Serializable{
 
     private double gatesUnlocked;
     
+    private Map map;
+    private Player player; 
+    private Actor[] actor;
+     private Inventory[] inventory;
+        
     public Game() {
     }
     
@@ -56,7 +61,37 @@ public class Game implements Serializable{
         return true;
     }
 
-    
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Actor[] getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor[] actor) {
+        this.actor = actor;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
     
     
 }

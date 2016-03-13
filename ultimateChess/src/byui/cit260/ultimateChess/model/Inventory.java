@@ -82,6 +82,18 @@ public class Inventory implements Serializable {
         }
         return true;
     }
+
+    public void setDescription(String potion) {
+       
+    }
+
+    public void setQuantityInStock(int i) {
+  
+    }
+
+    public void setRequiredAmount(int i) {
+  
+    }
     
     
 }

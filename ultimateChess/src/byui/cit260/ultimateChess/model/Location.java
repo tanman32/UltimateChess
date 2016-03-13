@@ -6,6 +6,7 @@
 package byui.cit260.ultimateChess.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -16,6 +17,9 @@ public class Location implements Serializable{
     private int row;
     private int column;
     private String specialLocation;
+    private boolean visited;
+    private Scene scene;
+    private ArrayList<Actor> actors;
 
     public Location() {
     }
@@ -44,6 +48,15 @@ public class Location implements Serializable{
         this.specialLocation = specialLocation;
     }
 
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -81,6 +94,22 @@ public class Location implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
     }
     
     

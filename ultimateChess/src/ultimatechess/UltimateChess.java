@@ -5,16 +5,9 @@
  */
 package ultimatechess;
 
-import byui.cit260.ultimateChess.model.Actor;
+
 import byui.cit260.ultimateChess.model.Game;
-import byui.cit260.ultimateChess.model.Inventory;
-import byui.cit260.ultimateChess.model.Journal;
-import byui.cit260.ultimateChess.model.Location;
-import byui.cit260.ultimateChess.model.Map;
 import byui.cit260.ultimateChess.model.Player;
-import byui.cit260.ultimateChess.model.Potions;
-import byui.cit260.ultimateChess.model.PowerUps;
-import byui.cit260.ultimateChess.view.GateControlOneView;
 import byui.cit260.ultimateChess.view.InventoryView;
 import byui.cit260.ultimateChess.view.StartProgram;
 

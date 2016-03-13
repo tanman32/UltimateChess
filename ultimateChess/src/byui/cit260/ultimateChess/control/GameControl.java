@@ -5,7 +5,11 @@
  */
 package byui.cit260.ultimateChess.control;
 
+import byui.cit260.ultimateChess.model.Game;
+import byui.cit260.ultimateChess.model.Inventory;
+import byui.cit260.ultimateChess.model.Map;
 import byui.cit260.ultimateChess.model.Player;
+import byui.cit260.ultimateChess.model.Scene;
 import ultimatechess.UltimateChess;
 
 
@@ -31,7 +35,55 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-       System.out.println("\n*** createNewGame stub function called ***");
+       Game game = new Game(); //creates new game
+       UltimateChess.setCurrentGame(game); //Save Ultimate Chess
+       
+       game.setPlayer(player); //save player in game
+       
+       // create the inventory list and save in the game
+       Inventory[] inventoryList = GameControl.createInventoryList();
+       game.setInventory(inventoryList);
+       
+       Map map = MapControl.createMap(); //create and intialize new map
+       game.setMap(map); // save the map in the game
+       MapControl.moveActorsToStartingLocation(map); // move actors to starting
+       // location in map
+       
+    }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public enum Item{
+        potion,
+        powerup,
+        journalclue;
+    }
+    private static Inventory[] createInventoryList() {
+        
+        // created array(list) of inventory items
+        Inventory[] inventory = new Inventory[3];
+        
+        Inventory potion = new Inventory();
+        potion.setDescription("potion");
+        potion.setQuantityInStock(0);
+        potion.setRequiredAmount(0);
+        inventory[Item.potion.ordinal()] = potion;
+        
+        Inventory powerup = new Inventory();
+        powerup.setDescription("potion");
+        powerup.setQuantityInStock(0);
+        powerup.setRequiredAmount(0);
+        inventory[Item.powerup.ordinal()] = powerup;
+        
+        Inventory journalclue = new Inventory();
+        journalclue.setDescription("potion");
+        journalclue.setQuantityInStock(0);
+        journalclue.setRequiredAmount(0);
+        inventory[Item.journalclue.ordinal()] = journalclue;
+        
+        return inventory;
     }
 
     
