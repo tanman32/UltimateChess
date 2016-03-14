@@ -5,6 +5,7 @@
  */
 package byui.cit260.ultimateChess.view;
 
+import byui.cit260.ultimateChess.model.Actor;
 import byui.cit260.ultimateChess.view.GateControlOneView;
 import byui.cit260.ultimateChess.view.codeToBreakView;
 
@@ -21,7 +22,7 @@ public class GameMenuView extends View{
               + "\n| Game Menu               |"
               + "\nV - View map"
               + "\nW - View list of items in weapons"
-              + "\nA - View list of armies"
+              + "\nA - View list of actors"
               + "\nL - View contents of location"
               + "\nM - Move person to new location"  
               + "\nE - Estimate the resource needed"  
@@ -45,7 +46,7 @@ public class GameMenuView extends View{
                 this.viewWeapons();
                 break;
             case "A":
-                this.viewArmies();
+                this.viewActors();
                 break;
             case "L":
                 this.viewLocation();
@@ -95,8 +96,13 @@ public class GameMenuView extends View{
         System.out.println("\n*** viewWeapons function called ***");
     }
 
-    private void viewArmies() {
-        System.out.println("\n*** viewArmies function called ***");
+    private void viewActors() {
+        //get all object from the Actor enum
+        Actor[] actorDescription = Actor.values();
+        
+        for (Actor description : actorDescription){
+        System.out.println(description.getDescription());
+        }
     }
 
     private void viewLocation() {

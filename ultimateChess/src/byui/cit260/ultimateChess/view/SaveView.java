@@ -20,7 +20,7 @@ public class SaveView extends View {
         super("\n"
               + "\n---------------------------"
               + "\n| Do your want to save your game?|"
-              + "\n| Please Enter y or n | "          
+              + "\n| Please Enter y or n            | "          
               + "\n---------------------------");       
     }
 
@@ -29,10 +29,10 @@ public class SaveView extends View {
             choice = choice.toUpperCase();
         
         switch (choice){
-            case "y":
+            case "Y":
                 this.yes();
                 break;
-            case "n":
+            case "N":
                 this.no();
                 break;
             default:
