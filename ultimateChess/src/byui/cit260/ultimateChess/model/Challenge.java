@@ -47,6 +47,10 @@ public class Challenge extends Scene {
     public void setMoves(ArrayList<Move> moves) {
         this.moves = moves;
     }
+
+    public void setGameBoard() {
+   
+    }
     
  
 

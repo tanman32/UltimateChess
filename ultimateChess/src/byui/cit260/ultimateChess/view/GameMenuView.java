@@ -88,7 +88,7 @@ public class GameMenuView extends View{
           System.out.println("");
           for(int j = 0; j < 8; j++)
           {
-              System.out.print(" " + i);
+              System.out.print(" " + locations[i][j]);
           }
       }
     }

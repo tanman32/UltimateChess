@@ -46,27 +46,16 @@ public class MapControl {
         challenge1.setType("Challenge");
         
         //Get and populate Gameboard
-        /*challenge1.setGameBoard(
-                {
-                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
-                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
-                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
-                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
-                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
-                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
-                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
-                    {"WK", "  ", "BP"," "," ", " ", " ", " "}
-                });
+       challenge1.setGameBoard();
         //Get and populate moves
         challenge1.getMoves().add(new Move("White Pawn", new Point (1,3)));
         challenge1.getMoves().add(new Move("White Knight", new Point (2,4)));
-        scenes[0] = challenge1;*/
-        return null;
+        
+        return scenes;
     }
 
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
-       Location[][] locations = map.getLocations();
-        locations[0][0].setScene(scenes[SceneType.challenge.ordinal()]);
+      
   }
 
     static void moveActorsToStartingLocation(Map map) {
