@@ -6,8 +6,10 @@
 package byui.cit260.ultimateChess.view;
 
 import byui.cit260.ultimateChess.model.Actor;
-import byui.cit260.ultimateChess.view.GateControlOneView;
-import byui.cit260.ultimateChess.view.codeToBreakView;
+import byui.cit260.ultimateChess.model.Game;
+import byui.cit260.ultimateChess.model.Location;
+import byui.cit260.ultimateChess.model.Map;
+import ultimatechess.UltimateChess;
 
 /**
  *
@@ -76,20 +78,19 @@ public class GameMenuView extends View{
     }
      
     private void viewMap() {
-        System.out.println("\n---------------------------------------"
-                         + "\n------------------Q--------------------"
-                         + "\n------------------  -------------------"
-                         + "\n------------------G--------------------"
-                         + "\n------------------  -------------------" 
-                         + "\n------------------  -------------------"
-                         + "\n---pt-R                         M-pu---"
-                         + "\n-----------------  --------------------" 
-                         + "\n-----------------  --------------------"
-                         + "\n------             --------------------"
-                         + "\n------  ----------  -------------------"
-                         + "\n------C-----------  -------------------"
-                         + "\n------cl----------S--------------------" 
-                         + "\n---------------------------------------");
+      
+      Game game = UltimateChess.getCurrentGame();
+      Map map = game.getMap();
+      Location[][] locations = map.getLocations();
+      
+      for (int i = 0; i < 8; i++){
+     
+          System.out.println("");
+          for(int j = 0; j < 8; j++)
+          {
+              System.out.print(" " + i);
+          }
+      }
     }
 
     private void viewWeapons() {

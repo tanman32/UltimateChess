@@ -21,7 +21,7 @@ class SceneType {
     static class start {
 
         static int ordinal() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 1;
         }
 
         public start() {
@@ -31,7 +31,7 @@ class SceneType {
     static class finish {
 
         static int ordinal() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 8;
         }
 
         public finish() {

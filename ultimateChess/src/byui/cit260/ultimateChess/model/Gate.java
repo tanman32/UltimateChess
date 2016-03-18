@@ -12,25 +12,16 @@ import java.util.Objects;
  *
  * @author Tanman
  */
-public class Gate implements Serializable {
+public class Gate extends Scene {
     
     // class instance variable
-    private String description;
     private String codeToBreak;
     private double solution;
     private boolean openStatus;
-    private int gateNum;
+  
 
     public Gate() {
-    }
-
-    
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+        super();
     }
 
     public String getCodeToBreak() {
@@ -57,22 +48,12 @@ public class Gate implements Serializable {
         this.openStatus = openStatus;
     }
 
-    public int getGateNum() {
-        return gateNum;
-    }
-
-    public void setGateNum(int gateNum) {
-        this.gateNum = gateNum;
-    }
-
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 43 * hash + Objects.hashCode(this.description);
-        hash = 43 * hash + Objects.hashCode(this.codeToBreak);
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.solution) ^ (Double.doubleToLongBits(this.solution) >>> 32));
-        hash = 43 * hash + (this.openStatus ? 1 : 0);
-        hash = 43 * hash + this.gateNum;
+        hash = 97 * hash + Objects.hashCode(this.codeToBreak);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.solution) ^ (Double.doubleToLongBits(this.solution) >>> 32));
+        hash = 97 * hash + (this.openStatus ? 1 : 0);
         return hash;
     }
 
@@ -94,12 +75,6 @@ public class Gate implements Serializable {
         if (this.openStatus != other.openStatus) {
             return false;
         }
-        if (this.gateNum != other.gateNum) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
         if (!Objects.equals(this.codeToBreak, other.codeToBreak)) {
             return false;
         }
@@ -108,8 +83,10 @@ public class Gate implements Serializable {
 
     @Override
     public String toString() {
-        return "Gate{" + "description=" + description + ", codeToBreak=" + codeToBreak + ", solution=" + solution + ", openStatus=" + openStatus + ", gateNum=" + gateNum + '}';
+        return "Gate{" + "codeToBreak=" + codeToBreak + ", solution=" + solution + ", openStatus=" + openStatus + '}';
     }
+
     
+   
     
 }

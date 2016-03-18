@@ -52,7 +52,7 @@ public class GameControl {
     }
 
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     
     }
 
     public enum Item{

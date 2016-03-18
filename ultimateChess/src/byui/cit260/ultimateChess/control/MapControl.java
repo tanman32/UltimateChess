@@ -6,8 +6,12 @@
 package byui.cit260.ultimateChess.control;
 
 import byui.cit260.ultimateChess.model.Actor;
+import byui.cit260.ultimateChess.model.Challenge;
 import byui.cit260.ultimateChess.model.Game;
+import byui.cit260.ultimateChess.model.Location;
 import byui.cit260.ultimateChess.model.Map;
+import byui.cit260.ultimateChess.model.Move;
+import java.awt.Point;
 import ultimatechess.UltimateChess;
 
 /**
@@ -31,11 +35,38 @@ public class MapControl {
 
 
     private static Scene[] createScenes() {
-    return null;
+    
+        Scene[] scenes = new Scene[12];
+        
+        Challenge challenge1 = new Challenge();
+        challenge1.setDescription("This is your first challenge.");
+        challenge1.setMapSymbol("M");
+        challenge1.setClue("The magic number is 42.");
+        challenge1.setSceneNum(1);
+        challenge1.setType("Challenge");
+        
+        //Get and populate Gameboard
+        /*challenge1.setGameBoard(
+                {
+                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
+                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
+                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
+                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
+                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
+                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
+                    {"WK", "  ", "BP"," "," ", " ", " ", " "},
+                    {"WK", "  ", "BP"," "," ", " ", " ", " "}
+                });
+        //Get and populate moves
+        challenge1.getMoves().add(new Move("White Pawn", new Point (1,3)));
+        challenge1.getMoves().add(new Move("White Knight", new Point (2,4)));
+        scenes[0] = challenge1;*/
+        return null;
     }
 
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
-       
+       Location[][] locations = map.getLocations();
+        locations[0][0].setScene(scenes[SceneType.challenge.ordinal()]);
   }
 
     static void moveActorsToStartingLocation(Map map) {

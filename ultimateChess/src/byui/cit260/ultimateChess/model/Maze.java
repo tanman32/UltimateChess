@@ -11,76 +11,28 @@ import java.io.Serializable;
  *
  * @author Tanman
  */
-public class Maze implements Serializable{
+public class Maze extends Scene{
     
-    private double startLocation;
-    private double endLocation;
-    private double safePath;
-
+    private Location[][] locations = new Location[10][10];
+    private Potions potion = new Potions();
+    
     public Maze() {
     }
 
-    
-    public double getStartLocation() {
-        return startLocation;
+    public Location[][] getLocations() {
+        return locations;
     }
 
-    public void setStartLocation(double startLocation) {
-        this.startLocation = startLocation;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
-    public double getEndLocation() {
-        return endLocation;
+    public Potions getPotion() {
+        return potion;
     }
 
-    public void setEndLocation(double endLocation) {
-        this.endLocation = endLocation;
-    }
-
-    public double getSafePath() {
-        return safePath;
-    }
-
-    public void setSafePath(double safePath) {
-        this.safePath = safePath;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.startLocation) ^ (Double.doubleToLongBits(this.startLocation) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.endLocation) ^ (Double.doubleToLongBits(this.endLocation) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.safePath) ^ (Double.doubleToLongBits(this.safePath) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Maze other = (Maze) obj;
-        if (Double.doubleToLongBits(this.startLocation) != Double.doubleToLongBits(other.startLocation)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.endLocation) != Double.doubleToLongBits(other.endLocation)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.safePath) != Double.doubleToLongBits(other.safePath)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Maze{" + "startLocation=" + startLocation + ", endLocation=" + endLocation + ", safePath=" + safePath + '}';
+    public void setPotion(Potions potion) {
+        this.potion = potion;
     }
     
     

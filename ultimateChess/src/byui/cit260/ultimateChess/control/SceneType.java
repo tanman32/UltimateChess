@@ -20,5 +20,15 @@ class SceneType {
         public start() {
         }
     }
+
+    static class challenge {
+
+        static int ordinal() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public challenge() {
+        }
+    }
     
 }
