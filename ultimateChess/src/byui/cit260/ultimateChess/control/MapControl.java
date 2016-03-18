@@ -5,6 +5,7 @@
  */
 package byui.cit260.ultimateChess.control;
 
+import byui.cit260.ultimateChess.model.Actor;
 import byui.cit260.ultimateChess.model.Game;
 import byui.cit260.ultimateChess.model.Map;
 import ultimatechess.UltimateChess;
@@ -28,35 +29,6 @@ public class MapControl {
        return map;
     }
 
-    public static int moveActorsToStartingLocation(Actor actor, Point coordinates) {
-      
-        Map map = UltimateChass.getCurrentGame().getMap();
-        int newRow = coordinates.x-1;
-        int newColumn = coordinates.y-1;
-        
-        if (newRow < 0 || newRow >= map.getNoOfRows() ||
-            newColumn < 0 || newColumn >= map.getNoOfColumns()) {    
-            throw new MapcontrolException("Can not move actor to location "
-                                          + coordinates.x "," + coordinates.y
-                                          +" because that location is outside "
-                                          +" the bounds of the map.");
-    }
-        
-    }
-    
-    
-    
-    public static int moveActorsToStartingLocation(Map map) {
-        // for every actor     
-        throws MapControlException {
-        Actor[] actor = actor.values();
-        
-        for (Actor actor : actors) {
-            Point coordinstes = actor.getCoordinates();
-            MapControl.moveActorsToStartingLocation(actor, coordinates);
-    }
-        
-    }
 
     private static Scene[] createScenes() {
     return null;
@@ -66,6 +38,10 @@ public class MapControl {
        
   }
 
+    static void moveActorsToStartingLocation(Map map) {
+      
+    }
+
     private static class Scene {
 
         public Scene() {
@@ -73,6 +49,7 @@ public class MapControl {
     }
     
 }
+
 
 
 
