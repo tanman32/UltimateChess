@@ -16,9 +16,18 @@ import ultimatechess.UltimateChess;
  */
 public class Scene implements Serializable{
 //private instance variables
-    private String type;
+    public enum SceneType1 {
+        Maze,
+        Riddle,
+        Gate,
+        Challenge,
+        Start,
+        Finish,
+        Hallway;
+    }
     
-   private String description;
+    private String type;
+    private String description;
     private int reward;
     private int sceneNum;
     private String mapSymbol;
@@ -62,14 +71,18 @@ public class Scene implements Serializable{
         return mapSymbol;
     }
 
-//getter and setter function
     public void setMapSymbol(String mapSymbol) {
         this.mapSymbol = mapSymbol;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.type);
+        hash = 53 * hash + Objects.hashCode(this.description);
+        hash = 53 * hash + this.reward;
+        hash = 53 * hash + this.sceneNum;
+        hash = 53 * hash + Objects.hashCode(this.mapSymbol);
         return hash;
     }
 
@@ -110,37 +123,4 @@ public class Scene implements Serializable{
     
     
     
-//getter and setter function
-    
-    //location
-    //default constructor
-    
-    /*
-    //ArrayList<Student> students = new ArrayList<>();
-    public enum SceneType{
-        start,
-        finish;
-    }
-    private static Scene[] createScenes() 
-    {
-        Game game = UltimateChess.getCurrentGame();
-        
-        Scene[] scenes = new Scene[SceneType.values().length];
-        
-        Scene startingScene = new Scene();
-        startingScene.setDescription("\nThis is the beginning of the program.");
-        startingScene.setBlocked(false);
-        startingScene.setMapSymbol(" ST ");
-        startingScene.setTravelTime(240.0);
-        scenes[SceneType.start.ordinal()] = startingScene;
-        
-        Scene finishScene = new Scene();
-        finishScene.setDescription("\nThis is the ending of the program.");
-        finishScene.setBlocked(false);
-        finishScene.setMapSymbol(" FN ");
-        startingScene.setTravelTime(Double.POSITIVE_INFINITY);
-        scenes[SceneType.finish.ordinal()] = finishScene;
-        
-        return null;
-    }*/
 }

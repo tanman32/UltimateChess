@@ -18,7 +18,7 @@ public class Game implements Serializable{
     private Map map;
     private Player player; 
     private Actor[] actor;
-     private Inventory[] inventory;
+    private Inventory[] inventory;
         
     public Game() {
     }

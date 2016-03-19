@@ -68,19 +68,16 @@ public class GameControl {
         Inventory potion = new Inventory();
         potion.setDescription("potion");
         potion.setQuantityInStock(0);
-        potion.setRequiredAmount(0);
         inventory[Item.potion.ordinal()] = potion;
         
         Inventory powerup = new Inventory();
-        powerup.setDescription("potion");
+        powerup.setDescription("powerup");
         powerup.setQuantityInStock(0);
-        powerup.setRequiredAmount(0);
         inventory[Item.powerup.ordinal()] = powerup;
         
         Inventory journalclue = new Inventory();
-        journalclue.setDescription("potion");
+        journalclue.setDescription("journalclue");
         journalclue.setQuantityInStock(0);
-        journalclue.setRequiredAmount(0);
         inventory[Item.journalclue.ordinal()] = journalclue;
         
         return inventory;

@@ -7,6 +7,7 @@ package byui.cit260.ultimateChess.view;
 
 import byui.cit260.ultimateChess.model.Actor;
 import byui.cit260.ultimateChess.model.Game;
+import byui.cit260.ultimateChess.model.Inventory;
 import byui.cit260.ultimateChess.model.Location;
 import byui.cit260.ultimateChess.model.Map;
 import ultimatechess.UltimateChess;
@@ -44,8 +45,8 @@ public class GameMenuView extends View{
             case "V":
                 this.viewMap();
                 break;
-            case "W":
-                this.viewWeapons();
+            case "I":
+                this.viewInventory();
                 break;
             case "A":
                 this.viewActors();
@@ -78,23 +79,48 @@ public class GameMenuView extends View{
     }
      
     private void viewMap() {
+     
+      //get the map locations from the current game
+      Location[][] locations = UltimateChess.getCurrentGame().getMap().getLocations();
+      //DISPLAY title
+      System.out.println("This is map of Ultimate Chess");
+      //DISPLAY row of column numbers
+      System.out.println(" | 0 | | 1 | | 2 | | 3 | | 4 | | 5 | | 6 |");
+     //FOR every row in map
+     for (int r = 0; r < 22; r++){
+        System.out.print("\n----------------------------------------------" +
+                             "\n" + r);
+     for (int c = 0; c < 7; c++){
+        System.out.print("  |  " +locations[r][c].getScene().getMapSymbol());  
+        System.out.print("\n----------------------------------------------");
+     }
+     }
+    }
+    
       
       Game game = UltimateChess.getCurrentGame();
       Map map = game.getMap();
-      Location[][] locations = map.getLocations();
-      
-      for (int i = 0; i < 8; i++){
-     
-          System.out.println("");
-          for(int j = 0; j < 8; j++)
-          {
-              System.out.print(" " + locations[i][j]);
-          }
-      }
-    }
 
-    private void viewWeapons() {
-        System.out.println("\n*** viewWeapons function called ***");
+    private void viewInventory() {
+        StringBuilder line;
+        
+        Game game = UltimateChess.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+        System.out.println("\n     LIST OF INVENTORY ITEMS");
+        line = new StringBuilder("                         ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(30, "IN STOCK");
+        System.out.println(line.toString());
+        
+        for (Inventory item : inventory) {
+        line = new StringBuilder("                         ");
+        line.insert(0, item.getDescription());
+        line.insert(30,item.getQuantityInStock());
+        
+        System.out.println(line.toString());
+        
+        }
     }
 
     private void viewActors() {
