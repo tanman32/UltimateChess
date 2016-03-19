@@ -23,7 +23,11 @@ public class Scene implements Serializable{
         Challenge,
         Start,
         Finish,
-        Hallway;
+        Path,
+        Powerup,
+        Potion,
+        Clue,
+        Empty;
     }
     
     private String type;

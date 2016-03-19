@@ -11,7 +11,6 @@ import byui.cit260.ultimateChess.model.Inventory;
 import byui.cit260.ultimateChess.model.Location;
 import byui.cit260.ultimateChess.model.Map;
 import ultimatechess.UltimateChess;
-
 /**
  *
  * @author Tanman
@@ -85,14 +84,14 @@ public class GameMenuView extends View{
       //DISPLAY title
       System.out.println("This is map of Ultimate Chess");
       //DISPLAY row of column numbers
-      System.out.println(" | 0 | | 1 | | 2 | | 3 | | 4 | | 5 | | 6 |");
+      System.out.println("    | 0 | | 1 | | 2 | | 3 | | 4 | | 5 | | 6 |");
      //FOR every row in map
-     for (int r = 0; r < 22; r++){
+     for (int r = 0; r < 21; r++){
         System.out.print("\n----------------------------------------------" +
                              "\n" + r);
      for (int c = 0; c < 7; c++){
         System.out.print("  |  " +locations[r][c].getScene().getMapSymbol());  
-        System.out.print("\n----------------------------------------------");
+        
      }
      }
     }
