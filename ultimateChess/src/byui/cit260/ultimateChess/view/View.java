@@ -34,8 +34,14 @@ public abstract class View implements ViewInterface {
               if (value.toUpperCase().equals("Q"))
                   return;
             //do  the requested action and display the next view
+           try{
             done = this.doAction(value);
-        } while (!done);
+        } catch(NumberFormatException nf){
+             System.out.println("Error! You must enter a NUMBER. Please try again.");
+       }
+    }
+        
+       while (!done);
     }
     
     @Override

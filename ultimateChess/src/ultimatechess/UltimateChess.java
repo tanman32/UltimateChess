@@ -29,14 +29,16 @@ public class UltimateChess {
         
         //create StartProgramViewOrig and display the start program view
         StartProgram startProgram = new StartProgram();
+      try{  
         startProgram.display();
-        
-        //create StartProgramViewOrig and display the start program view
-        InventoryView checkStatus = new InventoryView();
-        checkStatus.display();
-        
-        
+      } catch (Throwable te) { 
+        System.out.println(te.getMessage());
+        te.printStackTrace();
+        startProgram.display(); 
     }
+    
+    }
+     
 
     public static Game getCurrentGame() {
         return currentGame;
