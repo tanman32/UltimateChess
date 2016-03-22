@@ -10,6 +10,7 @@ import byui.cit260.ultimateChess.model.Inventory;
 import byui.cit260.ultimateChess.model.Map;
 import byui.cit260.ultimateChess.model.Player;
 import byui.cit260.ultimateChess.model.Scene;
+import citbyui.cit260.ultimateChess.exceptions.MapControlException;
 import ultimatechess.UltimateChess;
 
 
@@ -25,10 +26,13 @@ public class GameControl {
         if (name == null){
             return null;
         }
-        
         Player player = new Player();
+        try{
         player.setName(name);
-        
+        }catch (Throwable te) { 
+        System.out.println(te.getMessage());
+        te.printStackTrace();
+    }
         UltimateChess.setPlayer(player);
         
         return player;
@@ -44,8 +48,15 @@ public class GameControl {
        Inventory[] inventoryList = GameControl.createInventoryList();
        game.setInventory(inventoryList);
        
+      try{
        Map map = MapControl.createMap(); //create and intialize new map
-       game.setMap(map); // save the map in the game
+       game.setMap(map); 
+       MapControl.moveActorsToStartingLocation(map);
+      } catch (MapControlException me){
+          System.out.println(me.getMessage());
+          me.printStackTrace();
+      }
+// save the map in the game
 //       MapControl.moveActorsToStartingLocation(map); // move actors to starting
        // location in map
        

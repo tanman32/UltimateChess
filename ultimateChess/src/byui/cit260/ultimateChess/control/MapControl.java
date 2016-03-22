@@ -7,12 +7,15 @@ package byui.cit260.ultimateChess.control;
 
 //import byui.cit260.ultimateChess.model.Actor;
 //import byui.cit260.ultimateChess.model.Challenge;
+import byui.cit260.ultimateChess.model.Actor;
 import byui.cit260.ultimateChess.model.Game;
 import byui.cit260.ultimateChess.model.Location;
 import byui.cit260.ultimateChess.model.Map;
 //import byui.cit260.ultimateChess.model.Move;
 import byui.cit260.ultimateChess.model.Scene.SceneType1;
 import byui.cit260.ultimateChess.model.Scene;
+import citbyui.cit260.ultimateChess.exceptions.MapControlException;
+import java.awt.Point;
 //import java.awt.Point;
 import ultimatechess.UltimateChess;
 
@@ -188,9 +191,9 @@ public class MapControl {
       
 
 
-  }/*
+  }
 
-    static void moveActorsToStartingLocation(Map map) throws MapControlException {
+    public static void moveActorsToStartingLocation(Map map) throws MapControlException {
         // for every actor
         Actor[] actors = Actor.values();
       
@@ -217,5 +220,5 @@ public class MapControl {
                                           +" because that location is outside "
                                           +" the bounds of the map.");
         }
-    }*/
+    }
 }
