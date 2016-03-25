@@ -132,7 +132,8 @@ public class GameMenuView extends View{
     }
 
     private void viewLocation() {
-        System.out.println("\n*** viewLocation function called ***");
+         AccessView accessLocations = new AccessView();
+       accessLocations.display();
     }
 
     private void movePerson() {
@@ -149,14 +150,21 @@ public class GameMenuView extends View{
 
     private void openGate() {
        GateControlOneView gateToOpenView = new GateControlOneView();
+      
+       //Not ideal but needed this so the message wouldn't have the show up 
+       //multiple times.
+        System.out.println( "\nIf you know what the resistance and current"
+                 + "\nyou can solve for the voltage. Knowing the voltage will "
+                 + "\nallow you to open this gate\n"
+                 + "\nPlease enter the resistance: ");
        gateToOpenView.display();
                
     }
     
     private void openGate2() {
-       codeToBreakView codeToBreakViewOpen = new codeToBreakView();
-       codeToBreakViewOpen.display();
-               
+        
+        codeToBreakView codeToBreakViewOpen = new codeToBreakView();
+        codeToBreakViewOpen.display();          
     }
 
    

@@ -1,10 +1,10 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package byui.cit260.ultimateChess.control;
-
+import citbyui.cit260.ultimateChess.exceptions.GateControlException;
 /**
  *
  * @author Taylor
@@ -27,19 +27,21 @@ public class GateControl {
 
     }
 
-    public static double gateToOpen(double resistance, double current) {
+    public static double gateToOpen(double resistance, double current) 
+            throws GateControlException {
 
         if (resistance < 1 || resistance > 1000) {
-            return -3;
+            throw new GateControlException("\ninvalid resistance");
         }
 
-        if (current < 1 || current > 1000) {
-            return -4;
+        else if (current < 1 || current > 1000) {
+            throw new GateControlException("\ninvalid current");
         }
-
+        
+        else{
         double voltage = resistance * current;
 
         return voltage;
-
+        }
     }
 }

@@ -22,8 +22,8 @@ public class UltimateChess {
      * @param args the command line arguments
      */
     
-    private static Game currentGame = null;
-    private static Player player = null;
+    private  static Game currentGame = null;
+    private  static Player player = null;
     
     public static void main(String[] args) {
         
@@ -40,15 +40,15 @@ public class UltimateChess {
     }
      
 
-    public static Game getCurrentGame() {
+    public  static Game getCurrentGame() {
         return currentGame;
     }
 
-    public static void setCurrentGame(Game currentGame) {
+    public  static void setCurrentGame(Game currentGame) {
         UltimateChess.currentGame = currentGame;
     }
 
-    public static Player getPlayer() {
+    public  static Player getPlayer() {
         return player;
     }
 

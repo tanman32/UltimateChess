@@ -40,7 +40,7 @@ public class MapControl {
 
 
     private static Scene[] createScenes() {
-        Game game = UltimateChess.getCurrentGame();
+        
         Scene[] scenes = new Scene[SceneType1.values().length];
         
         //Maze scene
@@ -110,83 +110,70 @@ public class MapControl {
         emptyScene.setMapSymbol("*");
         emptyScene.setType("Empty");
         scenes[SceneType1.Empty.ordinal()] = emptyScene;
-/*
-        Challenge challenge1 = new Challenge();
-        challenge1.setDescription("This is your first challenge.");
-        challenge1.setMapSymbol("C");
-        challenge1.setClue("The magic number is 42.");
-        challenge1.setSceneNum(1);
-        challenge1.setType("Challenge");
-        
-        //Get and populate Gameboard
-       challenge1.setGameBoard();
-        //Get and populate moves
-        challenge1.getMoves().add(new Move("White Pawn", new Point (1,3)));
-        challenge1.getMoves().add(new Move("White Knight", new Point (2,4)));*/
         
         return scenes;
     }
 
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
-      Location[][] location = map.getLocations();
+      Location[][] locations = map.getLocations();
       
       for (int i = 0; i < 21; i++)
       {
           for (int j = 0; j < 21; j++)
           {
-              location[i][j].setScene(scenes[SceneType1.Empty.ordinal()]);
+              locations[i][j].setScene(scenes[SceneType1.Empty.ordinal()]);
           }
       }
-      location[2][1].setScene(scenes[SceneType1.Powerup.ordinal()]);
-      location[3][1].setScene(scenes[SceneType1.Riddle.ordinal()]);
-      location[4][1].setScene(scenes[SceneType1.Clue.ordinal()]);
-      location[6][1].setScene(scenes[SceneType1.Challenge.ordinal()]);
-      location[7][1].setScene(scenes[SceneType1.Clue.ordinal()]);
-      location[9][1].setScene(scenes[SceneType1.Powerup.ordinal()]);
-      location[10][1].setScene(scenes[SceneType1.Riddle.ordinal()]);
-      location[11][1].setScene(scenes[SceneType1.Clue.ordinal()]);
-      location[13][1].setScene(scenes[SceneType1.Challenge.ordinal()]);
-      location[14][1].setScene(scenes[SceneType1.Clue.ordinal()]);
-      location[16][1].setScene(scenes[SceneType1.Powerup.ordinal()]);
-      location[17][1].setScene(scenes[SceneType1.Riddle.ordinal()]);
-      location[18][1].setScene(scenes[SceneType1.Clue.ordinal()]);
-      location[3][2].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[6][2].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[10][2].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[13][2].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[17][2].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[1][3].setScene(scenes[SceneType1.Finish.ordinal()]);
-      location[2][3].setScene(scenes[SceneType1.Gate.ordinal()]);
-      location[3][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[4][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[5][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[6][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[7][3].setScene(scenes[SceneType1.Gate.ordinal()]);
-      location[8][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[9][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[10][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[11][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[12][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[13][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[14][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[15][3].setScene(scenes[SceneType1.Gate.ordinal()]);
-      location[16][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[17][3].setScene(scenes[SceneType1.Start.ordinal()]);
-      location[18][3].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[19][3].setScene(scenes[SceneType1.Challenge.ordinal()]);
-      location[3][4].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[8][4].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[16][4].setScene(scenes[SceneType1.Path.ordinal()]);
-      location[19][4].setScene(scenes[SceneType1.Clue.ordinal()]);
-      location[2][5].setScene(scenes[SceneType1.Potion.ordinal()]);
-      location[3][5].setScene(scenes[SceneType1.Maze.ordinal()]);
-      location[4][5].setScene(scenes[SceneType1.Clue.ordinal()]);
-      location[7][5].setScene(scenes[SceneType1.Potion.ordinal()]);
-      location[8][5].setScene(scenes[SceneType1.Maze.ordinal()]);
-      location[9][5].setScene(scenes[SceneType1.Clue.ordinal()]);
-      location[15][5].setScene(scenes[SceneType1.Potion.ordinal()]);
-      location[16][5].setScene(scenes[SceneType1.Maze.ordinal()]);
-      location[17][5].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[2][1].setScene(scenes[SceneType1.Powerup.ordinal()]);
+      locations[3][1].setScene(scenes[SceneType1.Riddle.ordinal()]);
+      locations[4][1].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[6][1].setScene(scenes[SceneType1.Challenge.ordinal()]);
+      locations[7][1].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[9][1].setScene(scenes[SceneType1.Powerup.ordinal()]);
+      locations[10][1].setScene(scenes[SceneType1.Riddle.ordinal()]);
+      locations[11][1].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[13][1].setScene(scenes[SceneType1.Challenge.ordinal()]);
+      locations[14][1].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[16][1].setScene(scenes[SceneType1.Powerup.ordinal()]);
+      locations[17][1].setScene(scenes[SceneType1.Riddle.ordinal()]);
+      locations[18][1].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[3][2].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[6][2].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[10][2].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[13][2].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[17][2].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[1][3].setScene(scenes[SceneType1.Finish.ordinal()]);
+      locations[2][3].setScene(scenes[SceneType1.Gate.ordinal()]);
+      locations[3][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[4][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[5][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[6][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[7][3].setScene(scenes[SceneType1.Gate.ordinal()]);
+      locations[8][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[9][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[10][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[11][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[12][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[13][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[14][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[15][3].setScene(scenes[SceneType1.Gate.ordinal()]);
+      locations[16][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[17][3].setScene(scenes[SceneType1.Start.ordinal()]);
+      locations[18][3].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[19][3].setScene(scenes[SceneType1.Challenge.ordinal()]);
+      locations[3][4].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[8][4].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[16][4].setScene(scenes[SceneType1.Path.ordinal()]);
+      locations[19][4].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[2][5].setScene(scenes[SceneType1.Potion.ordinal()]);
+      locations[3][5].setScene(scenes[SceneType1.Maze.ordinal()]);
+      locations[4][5].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[7][5].setScene(scenes[SceneType1.Potion.ordinal()]);
+      locations[8][5].setScene(scenes[SceneType1.Maze.ordinal()]);
+      locations[9][5].setScene(scenes[SceneType1.Clue.ordinal()]);
+      locations[15][5].setScene(scenes[SceneType1.Potion.ordinal()]);
+      locations[16][5].setScene(scenes[SceneType1.Maze.ordinal()]);
+      locations[17][5].setScene(scenes[SceneType1.Clue.ordinal()]);
       
       
 
@@ -220,5 +207,19 @@ public class MapControl {
                                           +" because that location is outside "
                                           +" the bounds of the map.");
         }
+    }
+
+    public static boolean checkLocation(int row, int column) {
+     Location[][] locations = UltimateChess.getCurrentGame().getMap().getLocations();
+        
+        
+      for (int i = 0; i < 21; i++)
+      {
+          System.out.print("\n");
+          for (int j = 0; j < 8; j++){
+      System.out.print(locations[i][j].getScene().getMapSymbol());
+          }
+      }
+      return true;
     }
 }

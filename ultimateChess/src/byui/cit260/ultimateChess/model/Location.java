@@ -19,7 +19,16 @@ public class Location implements Serializable{
     private String specialLocation;
     private boolean visited;
     private Scene scene;
+    private Move move;
     private ArrayList<Actor> actors;
+
+    public Move getMove() {
+        return move;
+    }
+
+    public void setMove(Move move) {
+        this.move = move;
+    }
 
     public Location() {
     }
