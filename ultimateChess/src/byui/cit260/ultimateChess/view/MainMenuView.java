@@ -51,7 +51,7 @@ public class MainMenuView extends View{
                 this.saveGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -68,7 +68,7 @@ public class MainMenuView extends View{
     }
 
     private void startExistingGame() {
-     System.out.println("\n*** startExistingGame function called ***");
+     this.console.println("\n*** startExistingGame function called ***");
     }
 
     private void displayHelpMenu() {
@@ -80,6 +80,20 @@ public class MainMenuView extends View{
     }
 
     private void saveGame() {
+        
+      this.console.println("\n\nEnter the file path for file where the game"
+                           +"is to be saved.");
+      
+       String filePath = this.getInput();
+       
+       try {
+           // save the game to the speciried file
+           GameControl.saveGame(UltimateChess.getCurrentGame(), filePath);
+       }catch (Exception ex) {
+           ErrorView.display("MainMenuView", ex.getMessage());
+       }
+    
+        
      //create help menu view object
         SaveView save = new SaveView();
        
@@ -88,6 +102,28 @@ public class MainMenuView extends View{
     }
     
     void displayMenu() {
-        System.out.println("\n*** displayMenu function called ***");
+        this.console.println("\n*** displayMenu function called ***");
+    }
+    
+    private void startSavedGame() {
+    
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\n Enter the file path for file where the game"
+                            +" is to be saved");
+        
+        String filePath = this.getInput();
+        
+        try{
+            // start a saved game
+            GameControl.saveGame(UltimateChess.getCurrentGame(),filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    
+   
+    
     }
 }

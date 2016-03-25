@@ -28,7 +28,7 @@ public class GateControlOneView extends View{
        
         double resistance = Double.parseDouble(value);
         
-        System.out.println("What is the current? ");
+        this.console.println("What is the current? ");
         
         String value2 = this.getInput();
         double current = Double.parseDouble(value2);
@@ -36,7 +36,7 @@ public class GateControlOneView extends View{
         double voltage = GateControl.gateToOpen(resistance, current);
         
         if (voltage != 100){
-            System.out.println("\nBetter Luck next time. This isn't the"
+            this.console.println("\nBetter Luck next time. This isn't the"
                     + "\n right voltage to open the gate.");
             return false;
         }
@@ -48,7 +48,7 @@ public class GateControlOneView extends View{
     }
 
     private void displayNextView(Double voltage) {
-        System.out.println("\n===================================="
+        this.console.println("\n===================================="
                 + "\n Eureka! " + voltage
                 + "\n is in fact the right voltage to"
                 + "\n open the gate"

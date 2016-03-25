@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.ultimateChess.view;
 
+import byui.cit260.ultimateChess.view.ErrorView;
 import byui.cit260.ultimateChess.view.StartProgram;
 import org.junit.AfterClass;
 import org.junit.Test;
@@ -29,7 +30,7 @@ public class StartProgramTest {
      */
     @Test
     public void testDisplayBanner() {
-        System.out.println("displayBanner");
+        ErrorView.display(this.getClass().getName(),"displayBanner");
         StartProgram instance = new StartProgram();
         //instance.displayBanner();
    
@@ -40,7 +41,7 @@ public class StartProgramTest {
      */
     @Test
     public void testStartProgram() {
-        System.out.println("startProgram");
+        ErrorView.display(this.getClass().getName(),"startProgram");
         StartProgram instance = new StartProgram();
         //instance.startProgram();
        

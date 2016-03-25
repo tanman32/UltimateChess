@@ -39,7 +39,7 @@ public class InventoryView extends View{
                 this.riddles();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break; 
         }
         
@@ -47,18 +47,18 @@ public class InventoryView extends View{
     }
 
     private void potions() {
-        System.out.println("\nWill display how many potions there are"
+        this.console.println("\nWill display how many potions there are"
                 + " and what type of potions that you have in stock along"
                 + "with the description of what that potion does.");
     }
 
       private void power_ups() {
-        System.out.println("\nWill display how many power-ups there are"
+        this.console.println("\nWill display how many power-ups there are"
                 + " and what type of power-ups that you have in stock along"
                 + "with the description of what that power-up does.");
     }
     private void riddles() {
-        System.out.println("\nWill display the riddle numbers that you"
+        this.console.println("\nWill display the riddle numbers that you"
                 + "you have collected.");
     }
     

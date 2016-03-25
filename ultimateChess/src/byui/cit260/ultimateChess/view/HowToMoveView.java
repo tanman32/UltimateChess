@@ -51,7 +51,7 @@ public class HowToMoveView extends View{
                 this.king();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break; 
         }
         
@@ -59,7 +59,7 @@ public class HowToMoveView extends View{
     }
 
     private void pawn() {
-        System.out.println("A pawn at the start can move one or two spaces"
+        this.console.println("A pawn at the start can move one or two spaces"
                 + "\nforward. If an opposing piece is infront, the pawn won't be"
                 + "\nable to move forward, unless the opposing piece is "
                 + "\ndiagonally aligned with the pawn in which case the pawn has"
@@ -70,13 +70,13 @@ public class HowToMoveView extends View{
     }
 
    private void rooke() {
-        System.out.println("A rooke can move an infinite amount of spaces on"
+        this.console.println("A rooke can move an infinite amount of spaces on"
                 + "\nthe gameboard vertically or horizontally until it runs into"
                 + "\nanother piece.");
     }
      
    private void knight() {
-        System.out.println("A knight can jump pieces. A knight can move one"
+        this.console.println("A knight can jump pieces. A knight can move one"
                 + "\nspace vertically or horizontally turn right or left and"
                 + "\nthen two more spaces from there or a knight can move two"
                 + "\nspace vertically or horizontally turn right or left and"
@@ -84,17 +84,17 @@ public class HowToMoveView extends View{
                 + "\nlanding on them.");
     }
    private void bishop() {
-        System.out.println("A bishop can move an infinite amount of spaces on"
+        this.console.println("A bishop can move an infinite amount of spaces on"
                 + "\nthe gameboard diagonally until it runs into"
                 + "\nanother piece.");
     }
    private void queen() {
-        System.out.println("A queen can move an infinite amount of spaces on"
+        this.console.println("A queen can move an infinite amount of spaces on"
                 + "\nthe gameboard diagonally, verticall, horizontally"
                 + "\nuntil it runs into another piece. She does it all.");
     }
    private void king() {
-        System.out.println("The king can only move to a spot that is one "
+        this.console.println("The king can only move to a spot that is one "
                 + "\nlocation away from him. A king must try his best to not be"
                 + "\nin check. Check is where a king's life is threatened by "
                 + "\nanother piece. If the king or the pieces can't get the king"

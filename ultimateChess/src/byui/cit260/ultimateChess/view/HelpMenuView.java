@@ -41,7 +41,7 @@ public class HelpMenuView extends View{
                 this.skill();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break; 
         }
         
@@ -49,7 +49,7 @@ public class HelpMenuView extends View{
     }
 
     private void goalOfGame() {
-        System.out.println("\nTo rescue the queen by completing a series of "
+        this.console.println("\nTo rescue the queen by completing a series of "
                 + "obstacles and traversing the castle.");
     }
 
@@ -61,7 +61,7 @@ public class HelpMenuView extends View{
         chessMove.display();
     }
     private void skill() {
-        System.out.println("\nAnything for now and exactly that.");
+        this.console.println("\nAnything for now and exactly that.");
     }
     
    

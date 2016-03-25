@@ -36,13 +36,13 @@ public class SaveView extends View {
                 this.no();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;        
         }
         return false;
          }
     private void yes() {
-        System.out.println("\n*** Your Game Saved ***");
+        this.console.println("\n*** Your Game Saved ***");
     }
     
 

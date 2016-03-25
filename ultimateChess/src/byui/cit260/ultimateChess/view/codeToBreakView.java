@@ -32,7 +32,7 @@ public class codeToBreakView extends View{
        
         double height = Double.parseDouble(value);
         
-        System.out.println("Please enter the base of triangle: ");
+        this.console.println("Please enter the base of triangle: ");
         
         String value2 = this.getInput();
         double base = Double.parseDouble(value2);
@@ -40,7 +40,7 @@ public class codeToBreakView extends View{
         double area = GateControl.calCodeToBreak(height, base);
         
         if (area != 200){
-            System.out.println("\nBetter Luck next time. This isn't the"
+            this.console.println("\nBetter Luck next time. This isn't the"
                     + "\n right voltage to open the gate.");
             return false;
         }
@@ -51,7 +51,7 @@ public class codeToBreakView extends View{
     }
 
     private void displayNextView(Double area) {
-        System.out.println("\n===================================="
+        this.console.println("\n===================================="
                 + "\n Awesome! " + area
                 + "\n is in fact the right area to"
                 + "\n open the gate"
