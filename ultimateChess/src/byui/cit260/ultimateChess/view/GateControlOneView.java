@@ -7,33 +7,41 @@ package byui.cit260.ultimateChess.view;
 
 import byui.cit260.ultimateChess.control.GateControl;
 import java.util.Scanner;
-
+import citbyui.cit260.ultimateChess.exceptions.GateControlException;
 /**
  *
  * @author Tanman
  */
 public class GateControlOneView extends View{
        
-  
+  int runOnlyOnce = 0;
    public GateControlOneView()
      {
-         super("If you know what the resistance and current"
-                 + "\nyou can solve for the voltage. Knowing the voltage will "
-                 + "\nallow you to open this gate\n"
-                 + "\n\nPlease enter the resistance: ");
+        //This can get obnoxious when getting multiple inputs
+         super( "");
      }
 
    @Override
     public boolean doAction(String value) {
+       
        
         double resistance = Double.parseDouble(value);
         
         this.console.println("What is the current? ");
         
         String value2 = this.getInput();
-        double current = Double.parseDouble(value2);
         
-        double voltage = GateControl.gateToOpen(resistance, current);
+        double current = Double.parseDouble(value2);
+       
+        
+        double voltage = 0;
+        
+        try {
+        voltage = GateControl.gateToOpen(resistance, current);
+        } catch(GateControlException e){
+            System.out.println(e.getMessage());
+        } 
+        
         
         if (voltage != 100){
             this.console.println("\nBetter Luck next time. This isn't the"

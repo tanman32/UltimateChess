@@ -6,6 +6,7 @@
 package byui.cit260.ultimateChess.view;
 
 import byui.cit260.ultimateChess.control.GameControl;
+import citbyui.cit260.ultimateChess.exceptions.MapControlException;
 
 import java.util.Scanner;
 import ultimatechess.UltimateChess;
@@ -59,10 +60,11 @@ public class MainMenuView extends View{
       
     }
 
-    private void startNewGame() {
+    private static void startNewGame() {
             //Creates a new game
+            
         GameControl.createNewGame(UltimateChess.getPlayer());
-        
+     
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }

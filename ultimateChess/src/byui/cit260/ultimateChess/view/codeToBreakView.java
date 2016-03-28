@@ -35,7 +35,13 @@ public class codeToBreakView extends View{
         this.console.println("Please enter the base of triangle: ");
         
         String value2 = this.getInput();
-        double base = Double.parseDouble(value2);
+        double base =  0;
+        
+        try {
+        base = Double.parseDouble(value2);
+         } catch (NumberFormatException nf) {
+            System.out.println("\nThis isn't a valid number to use.");
+        }
         
         double area = GateControl.calCodeToBreak(height, base);
         

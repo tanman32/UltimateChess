@@ -31,6 +31,8 @@ public class UltimateChess {
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     
+
+    
     private static PrintWriter logFile = null;
 
     public static PrintWriter getLogFile() {
@@ -102,15 +104,15 @@ public class UltimateChess {
 
     }
 
-    public static Game getCurrentGame() {
+    public  static Game getCurrentGame() {
         return currentGame;
     }
 
-    public static void setCurrentGame(Game currentGame) {
+    public  static void setCurrentGame(Game currentGame) {
         UltimateChess.currentGame = currentGame;
     }
 
-    public static Player getPlayer() {
+    public  static Player getPlayer() {
         return player;
     }
 

@@ -56,9 +56,10 @@ public class GameControl {
         }
     }
 
+
     public static Player createPlayer(String name)    {
+
        
-        
         if (name == null){
             return null;
         }
@@ -88,16 +89,20 @@ public class GameControl {
        game.setMap(map); 
        MapControl.moveActorsToStartingLocation(map);
       } catch (MapControlException me){
+          //Figure out what the error is
           System.out.println(me.getMessage());
-          me.printStackTrace();
-      }
+      } catch (Throwable e){
+          System.out.println(e.getMessage());
+          e.printStackTrace();
+          return;
+      } 
 // save the map in the game
 //       MapControl.moveActorsToStartingLocation(map); // move actors to starting
        // location in map
        
     }
 
-    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+    public  void assignScenesToLocations(Map map, Scene[] scenes) {
      
     }
 

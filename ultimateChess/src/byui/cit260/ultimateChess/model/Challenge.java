@@ -24,6 +24,10 @@ public class Challenge extends Scene {
     public Challenge() {
     }
 
+    public Challenge(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getClue() {
         return clue;
     }
@@ -50,6 +54,10 @@ public class Challenge extends Scene {
 
     public void setGameBoard() {
    
+    }
+
+    public Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
  
