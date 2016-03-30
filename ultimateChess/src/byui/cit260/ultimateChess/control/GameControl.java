@@ -5,6 +5,7 @@
  */
 package byui.cit260.ultimateChess.control;
 
+import byui.cit260.ultimateChess.model.Actor;
 import byui.cit260.ultimateChess.model.Game;
 import byui.cit260.ultimateChess.model.Inventory;
 import byui.cit260.ultimateChess.model.Map;
@@ -17,6 +18,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import static jdk.nashorn.tools.ShellFunctions.input;
 import ultimatechess.UltimateChess;
 
@@ -56,6 +58,23 @@ public class GameControl {
         }
     }
 
+    public static void print(Actor[] values, String filepath)
+            throws GameControlException {
+        try (PrintWriter print = new PrintWriter(filepath)) {
+            print.println("\n Name and Description");
+            print.println("\n" + "Name" + "description");
+          
+       
+        for (Actor printDescription : values){
+        print.println(printDescription.getDescription());
+        }
+        }
+        catch(Exception e ){
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
+    
 
     public static Player createPlayer(String name)    {
 

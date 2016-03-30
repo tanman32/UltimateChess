@@ -96,7 +96,7 @@ public class MapControl {
         Scene potionScene = new Scene();
         potionScene.setDescription("Congratulations on recieving a potion!");
         potionScene.setMapSymbol("T");
-        potionScene.setType("Power-up");
+        potionScene.setType("Potion");
         scenes[SceneType1.Potion.ordinal()] = potionScene;
         
         Scene clueScene = new Scene();

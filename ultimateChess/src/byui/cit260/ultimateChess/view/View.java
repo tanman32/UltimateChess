@@ -63,9 +63,6 @@ public abstract class View implements ViewInterface {
 
              this.console.println("\n" + this.displayMessage);
 
-             System.out.println(this.displayMessage);
-
-             
              //get the value entered from the keyboard
              value = this.keyboard.readLine();
              value = value.trim();

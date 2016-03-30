@@ -5,6 +5,7 @@
  */
 package byui.cit260.ultimateChess.view;
 
+import byui.cit260.ultimateChess.control.GameControl;
 import byui.cit260.ultimateChess.model.Actor;
 import byui.cit260.ultimateChess.model.Game;
 import byui.cit260.ultimateChess.model.Inventory;
@@ -30,7 +31,8 @@ public class GameMenuView extends View{
               + "\nE - Estimate the resource needed"  
               + "\nT - Open Gate" 
               + "\nD - Open Gate 2"
-              + "\nH - Help"  
+              + "\nH - Help" 
+              + "\nP - Print Actor"  
               + "\nQ - Quit"
               + "\n---------------------------");
     
@@ -67,6 +69,9 @@ public class GameMenuView extends View{
                 break;
              case "D":
                 this.openGate2();
+                break;
+             case "P":
+                this.print();
                 break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
@@ -172,7 +177,27 @@ public class GameMenuView extends View{
     }
 
    
+    private void print() {
+        
+      this.console.println("\n\nEnter the file path for file where the game"
+                           +"is to be saved.");
+      
+       String filePath = this.getInput();
+       
+       try {
+           // save the game to the speciried file
+           GameControl.print(Actor.values(), filePath);
+           this.console.println("\n The Description have been printed");
+       }catch (Exception ex) {
+           ErrorView.display("GameMenuView", ex.getMessage());
+       }
     
+    
+    
+    
+}
+    
+
 }
     
 
