@@ -93,7 +93,20 @@ public class GameMenuView extends View{
         System.out.print("  |  " +locations[r][c].getScene().getMapSymbol());  
         
      }
+   
      }
+       
+     System.out.print("\n\nX- Path"
+             + "\nC- Challenge"
+             + "\nP- Power-up"
+             + "\n?- Clue"
+             + "\nT- Potion"
+             + "\nG- Gate"
+             + "\nR- Riddle"
+             + "\nM- Maze"
+             + "\nI- Start"
+             + "\nF- Finish"
+             + "\n*-Null");
     }
     
       
