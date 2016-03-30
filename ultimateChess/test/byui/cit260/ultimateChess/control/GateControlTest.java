@@ -5,6 +5,7 @@
  */
 package byui.cit260.ultimateChess.control;
 
+import byui.cit260.ultimateChess.view.ErrorView;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,8 +43,8 @@ public class GateControlTest {
      */
     @Test
     public void testCalCodeToBreak() {
-        System.out.println("calCodeToBreak");
-        System.out.println("testcase1");
+        ErrorView.display(this.getClass().getName(),"calCodeToBreak");
+        ErrorView.display(this.getClass().getName(),"testcase1");
         double height = 50.0;
         double base = 100.0;
         GateControl instance = new GateControl();
@@ -51,7 +52,7 @@ public class GateControlTest {
         double result = instance.calCodeToBreak(height, base);
         assertEquals(expResult, result,.0001);
         
-        System.out.println("testcase2");
+        ErrorView.display(this.getClass().getName(),"testcase2");
         double height2 = -1.0;
         double base2 = 100.0;
         GateControl instance2 = new GateControl();
@@ -59,7 +60,7 @@ public class GateControlTest {
         double result2 = instance2.calCodeToBreak(height2, base2);
         assertEquals(expResult2, result2, 0.0001);
        
-         System.out.println("testcase3");
+        ErrorView.display(this.getClass().getName(),"testcase3");
         double height3 = 200.0;
         double base3 = -2;
         GateControl instance3 = new GateControl();
@@ -67,7 +68,7 @@ public class GateControlTest {
         double result3 = instance3.calCodeToBreak(height3, base3);
         assertEquals(expResult3, result3, 0.0001);
         
-         System.out.println("testcase4");
+        ErrorView.display(this.getClass().getName(),"testcase4");
         double height4 = 2000.0;
         double base4 = 250000.0;
         GateControl instance4 = new GateControl();
@@ -75,7 +76,7 @@ public class GateControlTest {
         double result4 = instance4.calCodeToBreak(height4, base4);
         assertEquals(expResult4, result4, 0.0001);
         
-         System.out.println("testcase5");
+        ErrorView.display(this.getClass().getName(),"testcase5");
         double height5 = 300000.0;
         double base5 = 5000.0;
         GateControl instance5 = new GateControl();
@@ -83,7 +84,7 @@ public class GateControlTest {
         double result5 = instance5.calCodeToBreak(height5, base5);
         assertEquals(expResult5, result5, 0.0001);
         
-         System.out.println("testcase6");
+        ErrorView.display(this.getClass().getName(),"testcase6");
         double height6 = 1.0;
         double base6 = 12.0;
         GateControl instance6 = new GateControl();
@@ -91,7 +92,7 @@ public class GateControlTest {
         double result6 = instance6.calCodeToBreak(height6, base6);
         assertEquals(expResult6, result6, 0.0001);
         
-         System.out.println("testcase7");
+        ErrorView.display(this.getClass().getName(),"testcase7");
         double height7 = 24.0;
         double base7 = 1.0;
         GateControl instance7 = new GateControl();
@@ -99,7 +100,7 @@ public class GateControlTest {
         double result7 = instance2.calCodeToBreak(height7, base7);
         assertEquals(expResult7, result7, 0.0001);
         
-         System.out.println("testcase8");
+        ErrorView.display(this.getClass().getName(),"testcase8");
         double height8 = 10000.0;
         double base8 = 2.0;
         GateControl instance8 = new GateControl();
@@ -113,8 +114,8 @@ public class GateControlTest {
      */
     @Test
     public void gateToOpen() {
-        System.out.println("gateToOpen");
-        System.out.println("testcase1");
+        ErrorView.display(this.getClass().getName(),"gateToOpen");
+        ErrorView.display(this.getClass().getName(),"testcase1");
         double resistance = 30.0;
         double current = 20.0;
         GateControl instance = new GateControl();
@@ -122,7 +123,7 @@ public class GateControlTest {
         double result = instance.gateToOpen(resistance, current);
         assertEquals(expResult, result,.0001);
         
-        System.out.println("testcase2");
+        ErrorView.display(this.getClass().getName(),"testcase2");
         double resistance2 = 321.0;
         double current2 = -87.0;
         GateControl instance2 = new GateControl();
@@ -130,7 +131,7 @@ public class GateControlTest {
         double result2 = instance2.gateToOpen(resistance2, current2);
         assertEquals(expResult2, result2, 0.0001);
        
-         System.out.println("testcase3");
+        ErrorView.display(this.getClass().getName(),"testcase3");
         double resistance3 = 55;
         double current3 = 0;
         GateControl instance3 = new GateControl();
@@ -138,7 +139,7 @@ public class GateControlTest {
         double result3 = instance3.gateToOpen(resistance3, current3);
         assertEquals(expResult3, result3, 0.0001);
         
-         System.out.println("testcase4");
+        ErrorView.display(this.getClass().getName(),"testcase4");
         double resistance4 = 25678.0;
         double current4 = 3.0;
         GateControl instance4 = new GateControl();
@@ -146,7 +147,7 @@ public class GateControlTest {
         double result4 = instance4.gateToOpen(resistance4, current4);
         assertEquals(expResult4, result4, 0.0001);
         
-         System.out.println("testcase5");
+        ErrorView.display(this.getClass().getName(),"testcase5");
         double resistance5 = 3.0;
         double current5 = 53464.0;
         GateControl instance5 = new GateControl();
@@ -154,7 +155,7 @@ public class GateControlTest {
         double result5 = instance5.gateToOpen(resistance5, current5);
         assertEquals(expResult5, result5, 0.0001);
         
-         System.out.println("testcase6");
+        ErrorView.display(this.getClass().getName(),"testcase6");
         double resistance6 = 1000.0;
         double current6 = 1.0;
         GateControl instance6 = new GateControl();
@@ -162,7 +163,7 @@ public class GateControlTest {
         double result6 = instance6.gateToOpen(resistance6, current6);
         assertEquals(expResult6, result6, 0.0001);
         
-         System.out.println("testcase7");
+        ErrorView.display(this.getClass().getName(),"testcase7");
         double resistance7 = 1.0;
         double current7 = 1000.0;
         GateControl instance7 = new GateControl();
@@ -170,7 +171,7 @@ public class GateControlTest {
         double result7 = instance2.gateToOpen(resistance7, current7);
         assertEquals(expResult7, result7, 0.0001);
         
-         System.out.println("testcase8");
+        ErrorView.display(this.getClass().getName(),"testcase8");
         double resistance8 = 999.0;
         double current8 = 1.0;
         GateControl instance8 = new GateControl();

@@ -10,7 +10,14 @@ import byui.cit260.ultimateChess.model.Inventory;
 import byui.cit260.ultimateChess.model.Map;
 import byui.cit260.ultimateChess.model.Player;
 import byui.cit260.ultimateChess.model.Scene;
+import byui.cit260.ultimateChess.view.ErrorView;
+import citbyui.cit260.ultimateChess.exceptions.GameControlException;
 import citbyui.cit260.ultimateChess.exceptions.MapControlException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import static jdk.nashorn.tools.ShellFunctions.input;
 import ultimatechess.UltimateChess;
 
 
@@ -19,21 +26,49 @@ import ultimatechess.UltimateChess;
  * @author Tanman
  */
 public class GameControl {
-
-   
-    public static Player createPlayer(String name) {
-       
+    
+    public static void getsaveGame(String filepath)
+            throws GameControlException {
+        Game game = null;
         
+        try (FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject(); //read the game object from file
+        }
+        catch(Exception e ) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        //close the output file
+        UltimateChess.setCurrentGame(game);
+    }   
+            
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);//write the game object out to file
+        }
+        catch(Exception e ){
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+
+    public static Player createPlayer(String name)    {
+
+       
         if (name == null){
             return null;
         }
         Player player = new Player();
-        try{
+        
         player.setName(name);
-        }catch (Throwable te) { 
-        System.out.println(te.getMessage());
-        te.printStackTrace();
-    }
+        
+        
+    
         UltimateChess.setPlayer(player);
         
         return player;

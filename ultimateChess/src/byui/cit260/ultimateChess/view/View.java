@@ -5,7 +5,10 @@
  */
 package byui.cit260.ultimateChess.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import ultimatechess.UltimateChess;
 
 /**
  *
@@ -15,6 +18,9 @@ public abstract class View implements ViewInterface {
     
     protected String displayMessage;
     
+    protected final BufferedReader keyboard = UltimateChess.getInFile();
+    protected final PrintWriter console = UltimateChess.getOutFile();
+
     public View() {
     }
     
@@ -37,7 +43,7 @@ public abstract class View implements ViewInterface {
            try{
             done = this.doAction(value);
         } catch(NumberFormatException nf){
-             System.out.println("Error! You must enter a NUMBER. Please try again.");
+             this.console.println("Error! You must enter a NUMBER. Please try again.");
        }
     }
         
@@ -47,27 +53,32 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
         
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false; 
         String value = null;
-         
+         try {
         //while a valid name has not been retrieved
          while(!valid){
              
              //prompt for the player's name
+
+             this.console.println("\n" + this.displayMessage);
+
              System.out.println(this.displayMessage);
+
              
              //get the value entered from the keyboard
-             value = keyboard.nextLine();
+             value = this.keyboard.readLine();
              value = value.trim();
              
              if (value.length() < 1) { // blank value entered
-                 System.out.println("\n*** You must enter a value ***");
+                 this.console.println("\n*** You must enter a value ***");
                  continue;
              }
              break;
          }
-         
+         }catch (Exception e) {
+             this.console.println("Error reading input: " + e.getMessage());
+         }  
          return value; //returns the name
     }
 }

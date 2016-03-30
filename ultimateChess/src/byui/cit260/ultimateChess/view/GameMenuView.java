@@ -69,7 +69,7 @@ public class GameMenuView extends View{
                 this.openGate2();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;        
         }
         
@@ -82,15 +82,15 @@ public class GameMenuView extends View{
       //get the map locations from the current game
       Location[][] locations = UltimateChess.getCurrentGame().getMap().getLocations();
       //DISPLAY title
-      System.out.println("This is map of Ultimate Chess");
+      this.console.println("This is map of Ultimate Chess");
       //DISPLAY row of column numbers
-      System.out.println("    | 0 | | 1 | | 2 | | 3 | | 4 | | 5 | | 6 |");
+      this.console.println("    | 0 | | 1 | | 2 | | 3 | | 4 | | 5 | | 6 |");
      //FOR every row in map
      for (int r = 0; r < 21; r++){
-        System.out.print("\n----------------------------------------------" +
+        this.console.print("\n----------------------------------------------" +
                              "\n" + r);
      for (int c = 0; c < 7; c++){
-        System.out.print("  |  " +locations[r][c].getScene().getMapSymbol());  
+        this.console.print("  |  " +locations[r][c].getScene().getMapSymbol());  
         
      }
    
@@ -119,18 +119,18 @@ public class GameMenuView extends View{
         Game game = UltimateChess.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
-        System.out.println("\n     LIST OF INVENTORY ITEMS");
+        this.console.println("\n     LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                         ");
         line.insert(0, "DESCRIPTION");
         line.insert(30, "IN STOCK");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         for (Inventory item : inventory) {
         line = new StringBuilder("                         ");
         line.insert(0, item.getDescription());
         line.insert(30,item.getQuantityInStock());
         
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         }
     }
@@ -140,25 +140,29 @@ public class GameMenuView extends View{
         Actor[] actorDescription = Actor.values();
         
         for (Actor description : actorDescription){
-        System.out.println(description.getDescription());
+        this.console.println(description.getDescription());
         }
     }
 
     private void viewLocation() {
+
+        this.console.println("\n*** viewLocation function called ***");
+
          AccessView accessLocations = new AccessView();
        accessLocations.display();
+
     }
 
     private void movePerson() {
-        System.out.println("\n*** movePerson function called ***");
+        this.console.println("\n*** movePerson function called ***");
     }
 
     private void EstimateResource() {
-        System.out.println("\n*** EstimateResource function called ***");
+        this.console.println("\n*** EstimateResource function called ***");
     }
 
     private void help() {
-        System.out.println("\n*** help function called ***");
+        this.console.println("\n*** help function called ***");
     }
 
     private void openGate() {

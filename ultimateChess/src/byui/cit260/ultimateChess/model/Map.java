@@ -5,6 +5,7 @@
  */
 package byui.cit260.ultimateChess.model;
 
+import byui.cit260.ultimateChess.view.ErrorView;
 import java.io.Serializable;
 /**
  *
@@ -19,7 +20,8 @@ public class Map implements Serializable{
 
     public Map(int rowCount, int columnCount) {
         if(rowCount < 1|| columnCount <1) {
-            System.out.println("The number of rows and colums must be > 0");
+            ErrorView.display(this.getClass().getName(),
+                    "The number of rows and colums must be > 0");
             return;
         }
         this.rowCount = rowCount;
