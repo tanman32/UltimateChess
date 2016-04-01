@@ -24,7 +24,6 @@ public class GameMenuView extends View{
               + "\n---------------------------"
               + "\n| Game Menu               |"
               + "\nV - View map"
-              + "\nW - View list of items in weapons"
               + "\nA - View list of actors"
               + "\nL - View contents of location"
               + "\nM - Move person to new location"  
@@ -167,7 +166,11 @@ public class GameMenuView extends View{
     }
 
     private void help() {
-        this.console.println("\n*** help function called ***");
+         //create help menu view object
+        HelpMenuView helpMenu = new HelpMenuView();
+       
+        //display help menu view object
+        helpMenu.display();
     }
 
     private void openGate() {

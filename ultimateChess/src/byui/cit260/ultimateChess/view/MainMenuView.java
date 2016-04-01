@@ -82,25 +82,17 @@ public class MainMenuView extends View{
     }
 
     private void saveGame() {
-        
-      this.console.println("\n\nEnter the file path for file where the game"
-                           +"is to be saved.");
-      
-       String filePath = this.getInput();
-       
-       try {
-           // save the game to the speciried file
-           GameControl.saveGame(UltimateChess.getCurrentGame(), filePath);
-       }catch (Exception ex) {
-           ErrorView.display("MainMenuView", ex.getMessage());
-       }
-    
-        
-     //create help menu view object
+         
+//create help menu view object
         SaveView save = new SaveView();
        
         //display help menu view object
-        save.display();
+        save.display();  
+        
+      
+    
+        
+  
     }
     
     void displayMenu() {
