@@ -11,6 +11,7 @@ import byui.cit260.ultimateChess.model.Game;
 import byui.cit260.ultimateChess.model.Inventory;
 import byui.cit260.ultimateChess.model.Location;
 import byui.cit260.ultimateChess.model.Map;
+import java.util.Scanner;
 import ultimatechess.UltimateChess;
 /**
  *
@@ -159,9 +160,67 @@ public class GameMenuView extends View{
     }
 
     private void movePerson() {
-        this.console.println("\n*** movePerson function called ***");
+       
+        
+       
+        
+        Location[][] locations = UltimateChess.getCurrentGame().getMap().getLocations();
+    
+         String[][] myArray = new String[21][21] ;
+         
+        
+     //Start while loop
+     int counter = 0;
+     while(counter == 0){
+         
+          System.out.println("\n");
+       Scanner reader = new Scanner(System.in);
+        System.out.println("Enter a row: ");
+        int ro = reader.nextInt(); 
+        System.out.println("Enter a column: ");
+        int co = reader.nextInt(); 
+        
+        if (locations[ro][co].getScene().getMapSymbol() == "*")
+        {
+            System.out.println("Invalid locaton");
+        }
+        else
+        {
+            
+        
+      
+        
+     for (int r = 0; r < 21; r++){
+        System.out.println("\n----------------------------------------------" +
+                             "\n" + r);
+     for (int c = 0; c < 7; c++){
+        if (myArray[r][c] == "L")
+        {
+            System.out.print("  |  " + myArray[r][c]);
+        }
+        else
+        {
+            System.out.print("  |  " +locations[r][c].getScene().getMapSymbol());
+        }
+     }
     }
-
+        }
+        
+      
+        System.out.println("\n");
+       Scanner in = new Scanner(System.in);
+        System.out.println("Enter 3 to quite or keep moving locations:");
+        int t = in.nextInt(); 
+        System.out.println(t);
+        if (t == 3)
+        {
+            counter++;
+        }
+       
+     }
+  
+  
+    }
     private void EstimateResource() {
         this.console.println("\n*** EstimateResource function called ***");
     }
