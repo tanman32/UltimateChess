@@ -70,7 +70,7 @@ public class UltimateChess {
             UltimateChess.outFile = new PrintWriter(System.out, true);
             
             // open log file
-            String filePath = "log.txt";
+            String filePath = "game.txt";
             UltimateChess.logFile = new PrintWriter(filePath);
             
             //create StartProgramViewOrig and display the start program view

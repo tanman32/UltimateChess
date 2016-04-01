@@ -42,7 +42,24 @@ public class SaveView extends View {
         return false;
          }
     private void yes() {
-        this.console.println("\n*** Your Game Saved ***");
+        this.console.println("\n\nEnter the file path for file where the game"
+                           +"is to be saved.");
+      
+       String filePath = this.getInput();
+       
+       try {
+           // save the game to the speciried file
+           GameControl.saveGame(UltimateChess.getCurrentGame(), filePath);
+       }catch (Exception ex) {
+           ErrorView.display("MainMenuView", ex.getMessage());
+       }
+       
+       this.console.println("\n*** Your Game Saved ***");
+        //create help menu view object
+        MainMenuView mainmenu = new MainMenuView();
+       
+        //display help menu view object
+        mainmenu.display();
     }
     
 
